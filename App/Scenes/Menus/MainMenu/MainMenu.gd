@@ -15,7 +15,7 @@ func load_scene(scene_path : String):
 	SceneLoader.load_scene(scene_path)
 
 func play_game():
-	SceneLoader.load_scene(game_scene_path)
+	SceneLoader.load_scene("res://Assets/Levels/Level.tscn")
 
 func _open_sub_menu(menu : Control):
 	menu.visible = true

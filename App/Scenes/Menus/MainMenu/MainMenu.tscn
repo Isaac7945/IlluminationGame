@@ -293,7 +293,7 @@ states/OpenSubMenu/node = SubResource("13")
 states/OpenSubMenu/position = Vector2(734, 123)
 states/Start/position = Vector2(82, 123)
 transitions = ["Intro", "OpenMainMenu", SubResource("11"), "OpenMainMenu", "OpenSubMenu", SubResource("14"), "Start", "Intro", SubResource("AnimationNodeStateMachineTransition_j0orr"), "OpenSubMenu", "OpenMainMenu", SubResource("AnimationNodeStateMachineTransition_63dxc")]
-graph_offset = Vector2(51, 80)
+graph_offset = Vector2(-135, 43)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -357,7 +357,7 @@ layout_mode = 2
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Title"
+text = "Illumination Game"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -365,7 +365,7 @@ vertical_alignment = 1
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Subtitle"
+text = "text"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -384,7 +384,6 @@ alignment = 1
 script = ExtResource("4_l1ebe")
 
 [node name="PlayButton" parent="MarginContainer/VBoxContainer/MenuMargin/MenuButtons" instance=ExtResource("5")]
-unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 size_flags_horizontal = 4

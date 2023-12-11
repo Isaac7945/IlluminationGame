@@ -21,6 +21,7 @@ func load_scene(path : String, in_background : bool = false) -> void:
 		return
 	if scene_to_load != path:
 		scene_to_load = path
+		print("loading: ", scene_to_load)
 		ResourceLoader.load_threaded_request(scene_to_load)
 	else:
 		call_deferred("emit_signal", "scene_loaded")
