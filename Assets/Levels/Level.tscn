@@ -3035,11 +3035,8 @@ sources/0 = SubResource("TileSetAtlasSource_aeog2")
 [node name="Level" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_u7uf5")]
-position = Vector2(323, 206)
+position = Vector2(323, 215)
 collision_mask = 6
-spd = 100
-jump_velocity = -150
-gravity = 500
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2.735, 2.735)

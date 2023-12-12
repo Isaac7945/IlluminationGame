@@ -1,8 +1,10 @@
+Node2D
+Sprite2D
+CollisionShape2D
+PlayerWalk
 PlayerIdle
 Node
 Camera2D
 TileMap
-CollisionShape2D
 AnimatedSprite2D
 CharacterBody2D
-Sprite2D

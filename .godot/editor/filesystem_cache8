@@ -1,9 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1702336493
+::res://::1702420327
 ATTRIBUTION.md::TextFile::-1::1702246432::0::1::::<><>::
 ATTRIBUTION_example.md::TextFile::-1::1702246432::0::1::::<><>::
 default_bus_layout.tres::AudioBusLayout::7962077120942509160::1702246432::0::1::::<><>::
-default_env.tres::Environment::7644774145736501582::1702336493::0::1::::<><>::
+default_env.tres::Environment::7644774145736501582::1702420463::0::1::::<><>::
 icon.png::CompressedTexture2D::6138412360554477131::1702246432::1702247059::1::::<><>::
 icon.svg::CompressedTexture2D::4470293230769917189::1702246432::1702247059::1::::<><>::
 LICENSE.txt::TextFile::-1::1702246432::0::1::::<><>::
@@ -61,17 +61,26 @@ SceneLoader.gd::GDScript::-1::1702272961::0::1::::<>Node<>::
 ::res://App/Themes/::1702246823
 BaseTheme.tres::Theme::677760010048342574::1702246432::0::1::::<><>::
 ::res://Assets/::1702274088
-::res://Assets/Levels/::1702336493
+::res://Assets/Levels/::1702420327
 Level.gd::GDScript::-1::1702254332::0::1::::<>Node2D<>::
-Level.tscn::PackedScene::7458484663230655000::1702336493::0::1::::<><>::uid://fgby3q41mfg3::::res://Assets/Player/player.tscn<>uid://mpnlaiqml3kl::::res://Assets/Sprites/Environment/tilemap.png
-::res://Assets/Player/::1702336493
-player.tscn::PackedScene::363435557484528924::1702336325::0::1::::<><>::res://Assets/Player/player.gd<>uid://dgqsxgcu3q67x::::res://Assets/Sprites/idle left.png<>uid://db5yerxyb2uqq::::res://Assets/Sprites/idle right.png
-player.gd::GDScript::-1::1702336493::0::1::::<>CharacterBody2D<>::
-::res://Assets/Sprites/::1702334780
+Level.tscn::PackedScene::7458484663230655000::1702420327::0::1::::<><>::uid://fgby3q41mfg3::::res://Assets/Player/player.tscn<>uid://mpnlaiqml3kl::::res://Assets/Sprites/Environment/tilemap.png
+::res://Assets/Player/::1702420327
+player.gd::GDScript::-1::1702418885::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::363435557484528924::1702420463::0::1::::<><>::res://Assets/Player/player.gd<>uid://dgqsxgcu3q67x::::res://Assets/Sprites/idle left.png<>uid://db5yerxyb2uqq::::res://Assets/Sprites/idle right.png<>res://Assets/Player/States/State Machine.gd<>uid://c0auxlyqxn3qa::::res://Assets/Sprites/walk left.png<>res://Assets/Player/States/PlayerIdle.gd<>uid://brqhfw7j1vus4::::res://Assets/Sprites/walk right.png<>uid://bs7i7oten8eq2::::res://Assets/Player/outer_arm.tscn<>res://Assets/Player/States/PlayerWalk.gd
+Arm.gd::GDScript::-1::1702420456::0::1::::<>Node2D<>::
+outer_arm.tscn::PackedScene::3716423603533287395::1702420456::0::1::::<><>::uid://iue4xkueahy5::::res://Assets/Sprites/outer arm.png<>res://Assets/Player/Arm.gd
+::res://Assets/Player/States/::1702418192
+PlayerIdle.gd::GDScript::-1::1702418177::0::1::::PlayerIdle<>State<>::
+PlayerWalk.gd::GDScript::-1::1702418192::0::1::::PlayerWalk<>State<>::
+State Machine.gd::GDScript::-1::1702412079::0::1::::<>Node<>::
+State.gd::GDScript::-1::1702351016::0::1::::State<>Node<>::
+::res://Assets/Sprites/::1702410005
 idle left.png::CompressedTexture2D::7614559455278564243::1702274114::1702274114::1::::<><>::
 idle right.png::CompressedTexture2D::7292847507861468968::1702274114::1702274114::1::::<><>::
 inner arm.png::CompressedTexture2D::4193757453587999057::1702274114::1702274114::1::::<><>::
 outer arm.png::CompressedTexture2D::603094184578922666::1702274114::1702274114::1::::<><>::
+walk left.png::CompressedTexture2D::6528818487042557544::1702410005::1702410005::1::::<><>::
+walk right.png::CompressedTexture2D::3613096222915454905::1702410005::1702410005::1::::<><>::
 ::res://Assets/Sprites/Environment/::1702334785
 tilemap.png::CompressedTexture2D::874040767708106343::1702334785::1702334785::1::::<><>::
 ::res://Extras/::1702246823
