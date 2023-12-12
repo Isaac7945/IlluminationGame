@@ -1,9 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1702274070
+::res://::1702336493
 ATTRIBUTION.md::TextFile::-1::1702246432::0::1::::<><>::
 ATTRIBUTION_example.md::TextFile::-1::1702246432::0::1::::<><>::
 default_bus_layout.tres::AudioBusLayout::7962077120942509160::1702246432::0::1::::<><>::
-default_env.tres::Environment::7644774145736501582::1702274070::0::1::::<><>::
+default_env.tres::Environment::7644774145736501582::1702336493::0::1::::<><>::
 icon.png::CompressedTexture2D::6138412360554477131::1702246432::1702247059::1::::<><>::
 icon.svg::CompressedTexture2D::4470293230769917189::1702246432::1702247059::1::::<><>::
 LICENSE.txt::TextFile::-1::1702246432::0::1::::<><>::
@@ -21,9 +21,9 @@ InitApp.tscn::PackedScene::3612125141053073924::1702246432::0::1::::<><>::res://
 LoadingScreen.gd::GDScript::-1::1702246432::0::1::::<>CanvasLayer<>::
 LoadingScreen.tscn::PackedScene::5035565993894699171::1702272962::0::1::::<><>::res://App/Scenes/LoadingScreen/LoadingScreen.gd
 ::res://App/Scenes/Menus/::1702246823
-::res://App/Scenes/Menus/MainMenu/::1702273984
+::res://App/Scenes/Menus/MainMenu/::1702335021
 MainMenu.gd::GDScript::-1::1702273398::0::1::::<>Control<>::
-MainMenu.tscn::PackedScene::6971184728863297558::1702273984::0::1::::<><>::res://App/Scenes/Menus/MainMenu/MainMenu.gd<>uid://bvwl11s2p0hd::::res://App/Scenes/Menus/OptionsMenu/MasterOptionsMenu.tscn<>uid://t2dui8ppm3a4::::res://App/Scenes/Credits/Credits.tscn<>res://App/Scripts/CaptureFocus.gd<>uid://doj1dmgtf0a71::::res://App/Scenes/UI/SoundButton/SoundButton.tscn
+MainMenu.tscn::PackedScene::6971184728863297558::1702335021::0::1::::<><>::res://App/Scenes/Menus/MainMenu/MainMenu.gd<>uid://bvwl11s2p0hd::::res://App/Scenes/Menus/OptionsMenu/MasterOptionsMenu.tscn<>uid://t2dui8ppm3a4::::res://App/Scenes/Credits/Credits.tscn<>res://App/Scripts/CaptureFocus.gd<>uid://doj1dmgtf0a71::::res://App/Scenes/UI/SoundButton/SoundButton.tscn
 ::res://App/Scenes/Menus/OptionsMenu/::1702246823
 MasterOptionsMenu.gd::GDScript::-1::1702246432::0::1::::<>Control<>::
 MasterOptionsMenu.tscn::PackedScene::114897600673659709::1702246432::0::1::::<><>::uid://c8vnncjwqcpab::::res://App/Scenes/Menus/OptionsMenu/Audio/AudioOptionsMenu.tscn<>res://App/Scenes/Menus/OptionsMenu/MasterOptionsMenu.gd<>uid://b2numvphf2kau::::res://App/Scenes/Menus/OptionsMenu/Video/VideoOptionsMenu.tscn<>uid://dp3rgqaehb3xu::::res://App/Scenes/Menus/OptionsMenu/Input/InputOptionsMenu.tscn
@@ -35,9 +35,9 @@ AudioOptionsMenu.tscn::PackedScene::7133237796474250445::1702246432::0::1::::<><
 ::res://App/Scenes/Menus/OptionsMenu/Audio/AudioControl/::1702246823
 AudioControl.gd::GDScript::-1::1702246432::0::1::::<>HBoxContainer<>::
 AudioControl.tscn::PackedScene::3407737051396901404::1702246432::0::1::::<><>::res://App/Scenes/Menus/OptionsMenu/Audio/AudioControl/AudioControl.gd
-::res://App/Scenes/Menus/OptionsMenu/Input/::1702246823
-InputOptionsMenu.gd::GDScript::-1::1702246432::0::1::::<>Control<>::
-InputOptionsMenu.tscn::PackedScene::8270941026968692746::1702246432::0::1::::<><>::res://App/Scenes/Menus/OptionsMenu/Input/InputOptionsMenu.gd<>res://App/Scripts/CaptureFocus.gd<>res://App/Scenes/Menus/OptionsMenu/Input/KeyAssignmentDialog.gd
+::res://App/Scenes/Menus/OptionsMenu/Input/::1702335978
+InputOptionsMenu.gd::GDScript::-1::1702335922::0::1::::<>Control<>::
+InputOptionsMenu.tscn::PackedScene::8270941026968692746::1702335978::0::1::::<><>::res://App/Scenes/Menus/OptionsMenu/Input/InputOptionsMenu.gd<>res://App/Scripts/CaptureFocus.gd<>res://App/Scenes/Menus/OptionsMenu/Input/KeyAssignmentDialog.gd
 KeyAssignmentDialog.gd::GDScript::-1::1702246432::0::1::::<>ConfirmationDialog<>::
 ::res://App/Scenes/Menus/OptionsMenu/Video/::1702246823
 VideoOptionsMenu.gd::GDScript::-1::1702246432::0::1::::<>Control<>::
@@ -61,16 +61,19 @@ SceneLoader.gd::GDScript::-1::1702272961::0::1::::<>Node<>::
 ::res://App/Themes/::1702246823
 BaseTheme.tres::Theme::677760010048342574::1702246432::0::1::::<><>::
 ::res://Assets/::1702274088
-::res://Assets/Levels/::1702274002
+::res://Assets/Levels/::1702336493
 Level.gd::GDScript::-1::1702254332::0::1::::<>Node2D<>::
-Level.tscn::PackedScene::7458484663230655000::1702274002::0::1::::<><>::
-::res://Assets/Player/::1702274081
-player.tscn::PackedScene::363435557484528924::1702274070::0::1::::<><>::
-::res://Assets/Sprites/::1702274114
+Level.tscn::PackedScene::7458484663230655000::1702336493::0::1::::<><>::uid://fgby3q41mfg3::::res://Assets/Player/player.tscn<>uid://mpnlaiqml3kl::::res://Assets/Sprites/Environment/tilemap.png
+::res://Assets/Player/::1702336493
+player.tscn::PackedScene::363435557484528924::1702336325::0::1::::<><>::res://Assets/Player/player.gd<>uid://dgqsxgcu3q67x::::res://Assets/Sprites/idle left.png<>uid://db5yerxyb2uqq::::res://Assets/Sprites/idle right.png
+player.gd::GDScript::-1::1702336493::0::1::::<>CharacterBody2D<>::
+::res://Assets/Sprites/::1702334780
 idle left.png::CompressedTexture2D::7614559455278564243::1702274114::1702274114::1::::<><>::
 idle right.png::CompressedTexture2D::7292847507861468968::1702274114::1702274114::1::::<><>::
 inner arm.png::CompressedTexture2D::4193757453587999057::1702274114::1702274114::1::::<><>::
 outer arm.png::CompressedTexture2D::603094184578922666::1702274114::1702274114::1::::<><>::
+::res://Assets/Sprites/Environment/::1702334785
+tilemap.png::CompressedTexture2D::874040767708106343::1702334785::1702334785::1::::<><>::
 ::res://Extras/::1702246823
 ::res://Extras/Scenes/::1702246823
 ::res://Extras/Scenes/EndCredits/::1702246823
@@ -79,8 +82,8 @@ EndCredits.tscn::PackedScene::7821367978313092858::1702246432::0::1::::<><>::uid
 ::res://Extras/Scenes/GameScene/::1702246823
 GameUI.gd::GDScript::-1::1702246432::0::1::::<>Control<>::
 GameUI.tscn::PackedScene::8795268466999563124::1702246432::0::1::::<><>::res://Extras/Scenes/GameScene/GameUI.gd<>res://App/Scripts/PauseMenuController.gd<>uid://dtdpd6o5xj4dq::::res://Extras/Scenes/Menus/PauseMenu/PauseMenu.tscn
-::res://Extras/Scenes/InitApp/::1702273984
-InitApp.tscn::PackedScene::747799906348122463::1702273984::0::1::::<><>::uid://brp0f5m041sho::::res://App/Scenes/InitApp/InitApp.tscn
+::res://Extras/Scenes/InitApp/::1702335021
+InitApp.tscn::PackedScene::747799906348122463::1702335021::0::1::::<><>::uid://brp0f5m041sho::::res://App/Scenes/InitApp/InitApp.tscn
 ::res://Extras/Scenes/Menus/::1702246823
 ::res://Extras/Scenes/Menus/MainMenu/::1702246823
 MainMenu.gd::GDScript::-1::1702246432::0::1::::<>Control<>::

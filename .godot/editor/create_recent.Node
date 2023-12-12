@@ -1,5 +1,8 @@
+PlayerIdle
+Node
+Camera2D
+TileMap
 CollisionShape2D
 AnimatedSprite2D
 CharacterBody2D
-Camera2D
 Sprite2D

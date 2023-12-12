@@ -5,11 +5,12 @@ const ONE_INPUT_MINIMUM_TEXT : String = "%s must have at least one key or button
 const KEY_DELETION_TEXT : String = "Are you sure you want to remove %s from %s?"
 
 @export var action_name_map : Dictionary = {
-	"move_up" : "Up",
+	"move_up" : "Jump",
 	"move_down" : "Down",
 	"move_left" : "Left",
 	"move_right" : "Right",
-	"interact" : "Interact"
+	"primary_action" : "Flashlight",
+	"secondary_action" : "Stun"
 }
 @export var add_button_texture : Texture2D
 @export var remove_button_texture : Texture2D

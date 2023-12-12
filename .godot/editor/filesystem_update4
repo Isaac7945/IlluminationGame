@@ -1,9 +1,11 @@
 res://default_env.tres
-res://Extras/Scenes/InitApp/InitApp.tscn
 res://Assets/Levels/Level.tscn
+res://Extras/Scenes/InitApp/InitApp.tscn
 res://App/Scenes/Menus/MainMenu/MainMenu.tscn
-res://Assets/Levels/Level.gd
-res://App/Scenes/LoadingScreen/LoadingScreen.tscn
-res://App/Scripts/SceneLoader.gd
-res://App/Scenes/Menus/MainMenu/MainMenu.gd
 res://Assets/Player/player.tscn
+res://Assets/Player/player.gd
+res://App/Scenes/Menus/OptionsMenu/Input/InputOptionsMenu.tscn
+res://App/Scenes/Menus/OptionsMenu/Input/InputOptionsMenu.gd
+res://Assets/Player/States/State.gd
+res://Assets/Player/States/State Machine.gd
+res://Assets/Player/States/PlayerIdle.gd
