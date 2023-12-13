@@ -1,10 +1,8 @@
 res://default_env.tres
-res://Assets/Levels/Level.tscn
 res://Assets/Player/player.tscn
-res://Assets/Player/States/PlayerIdle.gd
 res://Assets/Player/States/PlayerWalk.gd
-res://Assets/Player/player.gd
-res://Assets/Player/States/State Machine.gd
-res://Assets/Player/Arm.gd
-res://Assets/Player/outer_arm.tscn
 res://Assets/Player/Arm.tscn
+res://Assets/Levels/Level.tscn
+res://Assets/Player/Arm.gd
+res://Assets/Player/States/PlayerIdle.gd
+res://Assets/Objects/flashlight.tscn

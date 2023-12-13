@@ -20,11 +20,11 @@ func handle_facing():
 			outer_arm.visible = true
 			inner_arm.visible = false
 			z_index = 1
-			$Offset.position.x = 0
-			$Offset.position.y = 0
+			#$Offset.position.x = 0
+			#$Offset.position.y = 0
 		'left':
 			outer_arm.visible = false
 			inner_arm.visible = true
 			z_index = -1
-			$Offset.position.x = 5
-			$Offset.position.y = 1
+			#$Offset.position.x = 5
+			#$Offset.position.y = 1

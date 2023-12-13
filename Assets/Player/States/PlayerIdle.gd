@@ -1,7 +1,7 @@
 extends State
 class_name PlayerIdle
 
-@export var anim: AnimatedSprite2D
+@export var anim: AnimationPlayer
 @export var player: CharacterBody2D
 
 func enter():
@@ -12,9 +12,9 @@ func enter():
 func change_facing():
 	match(player.facing):
 		'right':
-			anim.set_animation('idle_right')
+			anim.set_current_animation('idle_right')
 		'left':
-			anim.set_animation('idle_left')
+			anim.set_current_animation('idle_left')
 	anim.play()
 
 func process(delta):
@@ -24,3 +24,4 @@ func process(delta):
 
 func exit():
 	player.change_facing.disconnect(change_facing)
+	anim.stop()

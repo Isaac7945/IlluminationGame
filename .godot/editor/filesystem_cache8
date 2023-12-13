@@ -1,9 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1702420327
+::res://::1702443801
 ATTRIBUTION.md::TextFile::-1::1702246432::0::1::::<><>::
 ATTRIBUTION_example.md::TextFile::-1::1702246432::0::1::::<><>::
 default_bus_layout.tres::AudioBusLayout::7962077120942509160::1702246432::0::1::::<><>::
-default_env.tres::Environment::7644774145736501582::1702420463::0::1::::<><>::
+default_env.tres::Environment::7644774145736501582::1702433552::0::1::::<><>::
 icon.png::CompressedTexture2D::6138412360554477131::1702246432::1702247059::1::::<><>::
 icon.svg::CompressedTexture2D::4470293230769917189::1702246432::1702247059::1::::<><>::
 LICENSE.txt::TextFile::-1::1702246432::0::1::::<><>::
@@ -61,17 +61,17 @@ SceneLoader.gd::GDScript::-1::1702272961::0::1::::<>Node<>::
 ::res://App/Themes/::1702246823
 BaseTheme.tres::Theme::677760010048342574::1702246432::0::1::::<><>::
 ::res://Assets/::1702274088
-::res://Assets/Levels/::1702420327
+::res://Assets/Levels/::1702433477
 Level.gd::GDScript::-1::1702254332::0::1::::<>Node2D<>::
-Level.tscn::PackedScene::7458484663230655000::1702420327::0::1::::<><>::uid://fgby3q41mfg3::::res://Assets/Player/player.tscn<>uid://mpnlaiqml3kl::::res://Assets/Sprites/Environment/tilemap.png
-::res://Assets/Player/::1702420327
-player.gd::GDScript::-1::1702418885::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::363435557484528924::1702420463::0::1::::<><>::res://Assets/Player/player.gd<>uid://dgqsxgcu3q67x::::res://Assets/Sprites/idle left.png<>uid://db5yerxyb2uqq::::res://Assets/Sprites/idle right.png<>res://Assets/Player/States/State Machine.gd<>uid://c0auxlyqxn3qa::::res://Assets/Sprites/walk left.png<>res://Assets/Player/States/PlayerIdle.gd<>uid://brqhfw7j1vus4::::res://Assets/Sprites/walk right.png<>uid://bs7i7oten8eq2::::res://Assets/Player/outer_arm.tscn<>res://Assets/Player/States/PlayerWalk.gd
-Arm.gd::GDScript::-1::1702420456::0::1::::<>Node2D<>::
-outer_arm.tscn::PackedScene::3716423603533287395::1702420456::0::1::::<><>::uid://iue4xkueahy5::::res://Assets/Sprites/outer arm.png<>res://Assets/Player/Arm.gd
-::res://Assets/Player/States/::1702418192
-PlayerIdle.gd::GDScript::-1::1702418177::0::1::::PlayerIdle<>State<>::
-PlayerWalk.gd::GDScript::-1::1702418192::0::1::::PlayerWalk<>State<>::
+Level.tscn::PackedScene::7458484663230655000::1702433477::0::1::::<><>::uid://fgby3q41mfg3::::res://Assets/Player/player.tscn<>uid://mpnlaiqml3kl::::res://Assets/Sprites/Environment/tilemap.png
+::res://Assets/Player/::1702433552
+Arm.gd::GDScript::-1::1702422296::0::1::::<>Node2D<>::
+Arm.tscn::PackedScene::3716423603533287395::1702433477::0::1::::<><>::uid://iue4xkueahy5::::res://Assets/Sprites/outer arm.png<>res://Assets/Player/Arm.gd<>uid://b00qtp4kpeayr::::res://Assets/Sprites/inner arm.png
+player.gd::GDScript::-1::1702421756::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::363435557484528924::1702433552::0::1::::<><>::res://Assets/Player/player.gd<>uid://dgqsxgcu3q67x::::res://Assets/Sprites/idle left.png<>uid://db5yerxyb2uqq::::res://Assets/Sprites/idle right.png<>res://Assets/Player/States/State Machine.gd<>uid://c0auxlyqxn3qa::::res://Assets/Sprites/walk left.png<>res://Assets/Player/States/PlayerIdle.gd<>uid://brqhfw7j1vus4::::res://Assets/Sprites/walk right.png<>uid://bs7i7oten8eq2::::res://Assets/Player/Arm.tscn<>res://Assets/Player/States/PlayerWalk.gd
+::res://Assets/Player/States/::1702433461
+PlayerIdle.gd::GDScript::-1::1702420991::0::1::::PlayerIdle<>State<>::
+PlayerWalk.gd::GDScript::-1::1702433461::0::1::::PlayerWalk<>State<>::
 State Machine.gd::GDScript::-1::1702412079::0::1::::<>Node<>::
 State.gd::GDScript::-1::1702351016::0::1::::State<>Node<>::
 ::res://Assets/Sprites/::1702410005

@@ -2,7 +2,7 @@ extends State
 class_name PlayerWalk
 
 @export var spd: int
-@export var anim: AnimatedSprite2D
+@export var anim: AnimationPlayer
 @export var player: CharacterBody2D
 
 func enter():
@@ -16,15 +16,14 @@ func change_facing():
 	match(player.facing):
 		'right':
 			if dir > 0:
-				anim.play('walk_right', 1, false)
+				anim.play('walk_right')
 			elif dir < 0:
-				anim.play('walk_right', -1, true) # Play anim backwards if going backwards
+				anim.play_backwards('walk_right') # Play anim backwards if going backwards
 		'left':
 			if dir < 0:
-				anim.play('walk_left', 1, false)
+				anim.play('walk_left')
 			elif dir > 0:
-				anim.play('walk_left', -1, true)
-	
+				anim.play_backwards('walk_left')
 
 func physics_process(delta):
 	# Handle movement
@@ -42,3 +41,4 @@ func physics_process(delta):
 
 func exit():
 	player.change_facing.disconnect(change_facing)
+	anim.stop()

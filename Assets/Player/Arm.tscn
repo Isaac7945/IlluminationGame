@@ -18,7 +18,7 @@ texture = ExtResource("1_tltpb")
 [node name="InnerArm" type="Sprite2D" parent="Offset"]
 unique_name_in_owner = true
 visible = false
-position = Vector2(4, 0)
+position = Vector2(4, 1)
 rotation = -0.785398
 scale = Vector2(1.12013, 1.12013)
 texture = ExtResource("3_f2wdg")
