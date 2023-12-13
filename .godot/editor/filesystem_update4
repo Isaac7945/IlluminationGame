@@ -6,3 +6,4 @@ res://Assets/Levels/Level.tscn
 res://Assets/Player/Arm.gd
 res://Assets/Player/States/PlayerIdle.gd
 res://Assets/Objects/flashlight.tscn
+res://Assets/Objects/flashlight.gd

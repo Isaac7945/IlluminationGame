@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0auxlyqxn3qa"
-path="res://.godot/imported/walk left.png-53a6edef5e2a1ddc3b2ef68a9141aa6a.ctex"
+uid="uid://iue4xkueahy5"
+path="res://.godot/imported/outer arm.png-36f99c7267d8c70621a712b6015d54ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/walk left.png"
-dest_files=["res://.godot/imported/walk left.png-53a6edef5e2a1ddc3b2ef68a9141aa6a.ctex"]
+source_file="res://Assets/Sprites/Player/outer arm.png"
+dest_files=["res://.godot/imported/outer arm.png-36f99c7267d8c70621a712b6015d54ba.ctex"]
 
 [params]
 
