@@ -7,7 +7,7 @@ var facing: String = 'right':
 		change_facing.emit()
 var gravity = 400
 @onready var anim = $AnimatedSprite2D
-@onready var arm = $"Outer Arm"
+@onready var arm = $Arm
 
 func _process(delta):
 	if get_global_mouse_position().x > position.x:

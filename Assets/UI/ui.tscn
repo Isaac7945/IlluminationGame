@@ -11,6 +11,7 @@ shader_parameter/tint = null
 script = ExtResource("1_2icv4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_431in")
 anchors_preset = 15
 anchor_right = 1.0

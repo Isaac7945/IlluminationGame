@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cxgk881nixpol"
-path="res://.godot/imported/Layer_0002_7.png-02d4fa761ba37e552bc97b1c10f2d831.ctex"
+path="res://.godot/imported/FrontLeaves.png-065ec15c4e6e9792e8f43e5a81913dab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Environment/Parallax BG/Layer_0002_7.png"
-dest_files=["res://.godot/imported/Layer_0002_7.png-02d4fa761ba37e552bc97b1c10f2d831.ctex"]
+source_file="res://Assets/Sprites/Environment/Parallax BG/FrontLeaves.png"
+dest_files=["res://.godot/imported/FrontLeaves.png-065ec15c4e6e9792e8f43e5a81913dab.ctex"]
 
 [params]
 

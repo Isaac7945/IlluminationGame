@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://fgby3q41mfg3"]
+[gd_scene load_steps=39 format=3 uid="uid://fgby3q41mfg3"]
 
 [ext_resource type="Script" path="res://Assets/Player/player.gd" id="1_res3i"]
 [ext_resource type="Texture2D" uid="uid://dgqsxgcu3q67x" path="res://Assets/Sprites/Player/idle left.png" id="2_csy5g"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Assets/Player/States/PlayerIdle.gd" id="5_d52ff"]
 [ext_resource type="PackedScene" uid="uid://bs7i7oten8eq2" path="res://Assets/Player/Arm.tscn" id="6_8mnej"]
 [ext_resource type="Script" path="res://Assets/Player/States/PlayerWalk.gd" id="9_7kf2c"]
+[ext_resource type="Texture2D" uid="uid://d3we0q0xuouxy" path="res://Assets/Sprites/light.png" id="10_gs3x6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m1ksg"]
 size = Vector2(18, 30)
@@ -452,3 +453,12 @@ libraries = {
 "": SubResource("AnimationLibrary_5q3es")
 }
 speed_scale = 0.7
+
+[node name="PlayerGlow" type="PointLight2D" parent="."]
+scale = Vector2(1, 1.435)
+energy = 2.0
+range_item_cull_mask = 5
+shadow_enabled = true
+shadow_item_cull_mask = 4
+texture = ExtResource("10_gs3x6")
+texture_scale = 0.2
