@@ -1,8 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cahirw72kwto"]
+[gd_scene load_steps=7 format=3 uid="uid://cahirw72kwto"]
 
 [ext_resource type="Texture2D" uid="uid://0dl8pvo0utd0" path="res://Assets/Sprites/flashlight small.png" id="1_vf44i"]
 [ext_resource type="Script" path="res://Assets/Objects/flashlight.gd" id="1_xct4i"]
 [ext_resource type="Texture2D" uid="uid://d3we0q0xuouxy" path="res://Assets/Sprites/light.png" id="2_d8kgq"]
+[ext_resource type="Shader" path="res://Assets/Shaders/grayscale.gdshader" id="3_p3fu6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ptsou"]
+shader = ExtResource("3_p3fu6")
+shader_parameter/tint = null
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u4qik"]
 polygon = PackedVector2Array(7, -2, 10, -4, 76, -31, 8, -2, 8, 2, 76, 26, 10, 4, 7, 2)
@@ -16,12 +21,14 @@ texture = ExtResource("1_vf44i")
 hframes = 2
 
 [node name="FlashlightLight" type="PointLight2D" parent="."]
+material = SubResource("ShaderMaterial_ptsou")
 position = Vector2(9, 0)
-energy = 9.07
+energy = 4.55
 range_layer_min = -100
+range_layer_max = 1
 shadow_enabled = true
 texture = ExtResource("2_d8kgq")
-texture_scale = 0.3
+texture_scale = 0.4
 
 [node name="FlashlightShadow" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_u4qik")
