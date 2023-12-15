@@ -1,6 +1,11 @@
+MarginContainer
+TextureProgressBar
+ProgressBar
+Node2D
+ParallaxBackground
+CPUParticles2D
 ColorRect
 Marker2D
-Node2D
 PointLight2D
 TileMap
 Sprite2D
@@ -8,7 +13,3 @@ CanvasLayer
 SubViewport
 SubViewportContainer
 ParallaxLayer
-ParallaxBackground
-LightOccluder2D
-DirectionalLight2D
-AnimationPlayer

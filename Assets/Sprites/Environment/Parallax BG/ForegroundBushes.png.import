@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b87t6s8opyia3"
-path="res://.godot/imported/Layer_0000_9.png-c223d9edfe365c6dc7cf7f61dba6a9ab.ctex"
+path="res://.godot/imported/ForegroundBushes.png-89b311dd5d22c0884dec202d2e4cb3ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Environment/Parallax BG/Layer_0000_9.png"
-dest_files=["res://.godot/imported/Layer_0000_9.png-c223d9edfe365c6dc7cf7f61dba6a9ab.ctex"]
+source_file="res://Assets/Sprites/Environment/Parallax BG/ForegroundBushes.png"
+dest_files=["res://.godot/imported/ForegroundBushes.png-89b311dd5d22c0884dec202d2e4cb3ca.ctex"]
 
 [params]
 

@@ -1,7 +1,6 @@
 res://default_env.tres
 res://Assets/Levels/Level.tscn
 res://Assets/Shaders/grayscale.gdshader
-res://Assets/Levels/Level.gd
 res://Assets/Shaders/rainsnow.gdshader
 res://Assets/Shaders/pixelate.gdshader
 res://Assets/Shaders/grass.gdshader
@@ -12,5 +11,7 @@ res://Assets/Player/Arm.tscn
 res://Assets/Objects/flashlight.tscn
 res://Assets/Environment/grass.tscn
 res://Assets/UI/ui.tscn
-res://App/Scenes/Menus/MainMenu/MainMenu.tscn
-res://Assets/Levels/GrassSpawners.gd
+res://Assets/Global/Global.gd
+res://Assets/UI/ui.gd
+res://Assets/Objects/flashlight.gd
+res://Assets/Levels/Level.gd

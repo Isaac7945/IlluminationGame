@@ -10,7 +10,7 @@ shader = ExtResource("3_p3fu6")
 shader_parameter/tint = null
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u4qik"]
-polygon = PackedVector2Array(7, -2, 10, -4, 76, -31, 8, -2, 8, 2, 76, 26, 10, 4, 7, 2)
+polygon = PackedVector2Array(7, 1, 7, -4, 76, -31, 8, -2, 8, 2, 76, 26, 7, 3)
 
 [node name="Flashlight" type="Node2D"]
 script = ExtResource("1_xct4i")
@@ -24,7 +24,7 @@ hframes = 2
 material = SubResource("ShaderMaterial_ptsou")
 position = Vector2(9, 0)
 energy = 4.55
-range_layer_min = -100
+range_layer_min = -102
 range_layer_max = 1
 range_item_cull_mask = 3
 shadow_enabled = true
