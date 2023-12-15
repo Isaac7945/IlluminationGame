@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://Assets/Levels/Level.gd" id="1_jhjl8"]
 [ext_resource type="PackedScene" uid="uid://fgby3q41mfg3" path="res://Assets/Player/player.tscn" id="1_u7uf5"]
 [ext_resource type="Texture2D" uid="uid://di5i2m3sra87f" path="res://Assets/Sprites/Environment/dirt.png" id="2_ijx3g"]
+[ext_resource type="PackedScene" uid="uid://bw4djsumycjy8" path="res://Assets/Enemy/enemy.tscn" id="2_t3f8c"]
 [ext_resource type="Texture2D" uid="uid://us5ti3b2ucrd" path="res://Assets/Sprites/Environment/Parallax BG/BackmostTrees.png" id="5_rnk47"]
 [ext_resource type="Texture2D" uid="uid://decp0lbqsdjml" path="res://Assets/Sprites/Environment/Parallax BG/Layer_0009_2.png" id="5_sx4ne"]
 [ext_resource type="Shader" path="res://Assets/Shaders/pixelate.gdshader" id="6_3tmtr"]
@@ -12,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://b87t6s8opyia3" path="res://Assets/Sprites/Environment/Parallax BG/ForegroundBushes.png" id="7_ja7s0"]
 [ext_resource type="Texture2D" uid="uid://cxgk881nixpol" path="res://Assets/Sprites/Environment/Parallax BG/FrontLeaves.png" id="7_ppbg2"]
 [ext_resource type="Texture2D" uid="uid://bod7qe2xk8l48" path="res://Assets/Sprites/Environment/Parallax BG/ForegroundLeaves.png" id="7_rnfe5"]
-[ext_resource type="PackedScene" uid="uid://dxfq2p03uqsq" path="res://Assets/UI/ui.tscn" id="13_52alf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q1rbf"]
 
@@ -109,8 +109,6 @@ sources/0 = SubResource("TileSetAtlasSource_dn8np")
 [node name="Level" type="Node2D"]
 script = ExtResource("1_jhjl8")
 
-[node name="UI" parent="." instance=ExtResource("13_52alf")]
-
 [node name="GlobalLight" type="DirectionalLight2D" parent="."]
 light_mask = 0
 energy = 1.43
@@ -119,8 +117,13 @@ range_layer_min = -101
 range_layer_max = 10
 range_item_cull_mask = 0
 shadow_item_cull_mask = 0
+metadata/_edit_lock_ = true
+
+[node name="enemy" parent="." instance=ExtResource("2_t3f8c")]
+position = Vector2(296.495, 207.085)
 
 [node name="Parallax" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="ParallaxSky" type="ParallaxBackground" parent="Parallax"]
 layer = -102
@@ -215,12 +218,14 @@ offset_left = -642.0
 offset_top = -11.0
 offset_right = 1148.0
 offset_bottom = 266.0
+metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_u7uf5")]
 position = Vector2(323, 215)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2.735, 2.735)
+metadata/_edit_lock_ = true
 
 [node name="LightParticles" type="CPUParticles2D" parent="Player"]
 light_mask = 2
@@ -243,6 +248,7 @@ angle_max = 203.6
 scale_amount_min = 0.5
 scale_amount_max = 0.8
 color_ramp = SubResource("Gradient_cx6it")
+metadata/_edit_lock_ = true
 
 [node name="Ground" type="TileMap" parent="."]
 modulate = Color(0, 0.619608, 0.85098, 1)
@@ -252,6 +258,7 @@ layer_0/tile_data = PackedInt32Array(720896, 0, 0, 720897, 0, 0, 720898, 0, 0, 7
 metadata/_edit_lock_ = true
 
 [node name="GrassSpawners" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
 
 [node name="Marker2D" type="Marker2D" parent="GrassSpawners"]
 position = Vector2(288, 231)

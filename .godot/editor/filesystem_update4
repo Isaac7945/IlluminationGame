@@ -11,6 +11,9 @@ res://Assets/Player/Arm.tscn
 res://Assets/Objects/flashlight.tscn
 res://Assets/Environment/grass.tscn
 res://Assets/UI/ui.tscn
-res://Assets/Objects/flashlight.gd
-res://Assets/Global/Global.gd
-res://Assets/UI/ui.gd
+res://Assets/Enemy/enemy.tscn
+res://Assets/Enemy/States/EnemyIdle.gd
+res://Assets/Enemy/States/EnemyDeath.gd
+res://Assets/Enemy/States/EnemyFlashed.gd
+res://Assets/Enemy/States/EnemyAttack.gd
+res://Assets/Enemy/Enemy.gd
