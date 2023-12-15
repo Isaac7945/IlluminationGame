@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://dei7fgr6n1vd5"]
+[gd_scene load_steps=29 format=3 uid="uid://dei7fgr6n1vd5"]
 
 [ext_resource type="Shader" path="res://Assets/Shaders/rainsnow.gdshader" id="1_5ro15"]
 [ext_resource type="Script" path="res://Assets/Levels/Level.gd" id="1_jhjl8"]
 [ext_resource type="PackedScene" uid="uid://fgby3q41mfg3" path="res://Assets/Player/player.tscn" id="1_u7uf5"]
 [ext_resource type="Texture2D" uid="uid://di5i2m3sra87f" path="res://Assets/Sprites/Environment/dirt.png" id="2_ijx3g"]
+[ext_resource type="Texture2D" uid="uid://us5ti3b2ucrd" path="res://Assets/Sprites/Environment/Parallax BG/BackmostTrees.png" id="5_rnk47"]
 [ext_resource type="Texture2D" uid="uid://decp0lbqsdjml" path="res://Assets/Sprites/Environment/Parallax BG/Layer_0009_2.png" id="5_sx4ne"]
 [ext_resource type="Shader" path="res://Assets/Shaders/pixelate.gdshader" id="6_3tmtr"]
 [ext_resource type="Texture2D" uid="uid://8605mut0f581" path="res://Assets/Sprites/Environment/Parallax BG/FrontStems.png" id="6_xb3s6"]
@@ -60,7 +61,7 @@ shader_parameter/amount = 600
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sxuqc"]
 shader = ExtResource("1_5ro15")
-shader_parameter/count = 150
+shader_parameter/count = 200
 shader_parameter/slant = -0.006
 shader_parameter/speed = 25.0
 shader_parameter/blur = 0.0035
@@ -138,9 +139,20 @@ texture = ExtResource("5_sx4ne")
 metadata/_edit_lock_ = true
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Parallax"]
-offset = Vector2(147.02, 169.81)
+offset = Vector2(147.02, 167.5)
 scale = Vector2(0.53, 0.5)
-transform = Transform2D(0.53, 0, 0, 0.5, 147.02, 169.81)
+transform = Transform2D(0.53, 0, 0, 0.5, 147.02, 167.5)
+
+[node name="BackmostTrees" type="ParallaxLayer" parent="Parallax/ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.6)
+motion_mirroring = Vector2(640, 0)
+
+[node name="BackTrees" type="Sprite2D" parent="Parallax/ParallaxBackground/BackmostTrees"]
+self_modulate = Color(0.368627, 0.368627, 0.368627, 1)
+material = SubResource("ShaderMaterial_jggjw")
+position = Vector2(0, -12.4)
+scale = Vector2(0.72, 0.72)
+texture = ExtResource("5_rnk47")
 
 [node name="BackTreesLayer" type="ParallaxLayer" parent="Parallax/ParallaxBackground"]
 motion_scale = Vector2(0.7, 0.6)
@@ -194,13 +206,15 @@ z_index = 10
 material = SubResource("ShaderMaterial_q3mwd")
 texture = ExtResource("7_ja7s0")
 
+[node name="Rain" type="ParallaxLayer" parent="Parallax/ParallaxForeground"]
+
 [node name="RainSnow" type="ColorRect" parent="."]
+texture_repeat = 2
 material = SubResource("ShaderMaterial_sxuqc")
-offset_left = -1.0
+offset_left = -642.0
 offset_top = -11.0
-offset_right = 652.0
+offset_right = 1148.0
 offset_bottom = 266.0
-metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("1_u7uf5")]
 position = Vector2(323, 215)
@@ -212,7 +226,7 @@ zoom = Vector2(2.735, 2.735)
 light_mask = 2
 visibility_layer = 2
 material = SubResource("CanvasItemMaterial_j10l6")
-amount = 200
+amount = 300
 lifetime = 3.0
 explosiveness = 0.13
 randomness = 0.46

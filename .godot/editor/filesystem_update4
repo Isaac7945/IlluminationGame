@@ -11,7 +11,6 @@ res://Assets/Player/Arm.tscn
 res://Assets/Objects/flashlight.tscn
 res://Assets/Environment/grass.tscn
 res://Assets/UI/ui.tscn
+res://Assets/Objects/flashlight.gd
 res://Assets/Global/Global.gd
 res://Assets/UI/ui.gd
-res://Assets/Objects/flashlight.gd
-res://Assets/Levels/Level.gd

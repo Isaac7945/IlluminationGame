@@ -35,3 +35,11 @@ texture_scale = 0.4
 [node name="FlashlightShadow" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_u4qik")
 occluder_light_mask = 2
+
+[node name="RegenTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="ZapChargeTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]

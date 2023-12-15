@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://us5ti3b2ucrd"
-path="res://.godot/imported/Layer_0008_3.png-c67ff99ee1d4dd26d5558038d094509e.ctex"
+uid="uid://do41am5nvt12m"
+path="res://.godot/imported/gameicon.png-f4555dbe915197a8f7a8663bda6d1d32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Environment/Parallax BG/Layer_0008_3.png"
-dest_files=["res://.godot/imported/Layer_0008_3.png-c67ff99ee1d4dd26d5558038d094509e.ctex"]
+source_file="res://App/gameicon.png"
+dest_files=["res://.godot/imported/gameicon.png-f4555dbe915197a8f7a8663bda6d1d32.ctex"]
 
 [params]
 
