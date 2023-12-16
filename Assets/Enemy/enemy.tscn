@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bw4djsumycjy8"]
+[gd_scene load_steps=15 format=3 uid="uid://bw4djsumycjy8"]
 
 [ext_resource type="Texture2D" uid="uid://b2n2gsuyc114a" path="res://Assets/Sprites/Enemy/ghost.png" id="1_3scmi"]
 [ext_resource type="Script" path="res://Assets/Enemy/Enemy.gd" id="1_ycvc0"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Assets/Enemy/States/EnemyAttack.gd" id="4_k7vol"]
 [ext_resource type="Script" path="res://Assets/Enemy/States/EnemyFlashed.gd" id="5_6pxed"]
 [ext_resource type="Script" path="res://Assets/Enemy/States/EnemyDeath.gd" id="6_2bgyx"]
+[ext_resource type="Script" path="res://Assets/Enemy/States/EnemyFollow.gd" id="8_715cw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jnnx"]
 size = Vector2(12, 16)
@@ -49,7 +50,7 @@ animations = [{
 
 [node name="enemy" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 28
+collision_mask = 24
 script = ExtResource("1_ycvc0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -64,12 +65,14 @@ frame_progress = 0.571015
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_tcxlo")
-initial_state = NodePath("Idle")
+initial_state = NodePath("Follow")
 
-[node name="Idle" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
+[node name="Idle" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy", "spr")]
 script = ExtResource("3_comam")
 enemy = NodePath("../..")
+spr = NodePath("../../EnemySprite")
 move_spd = 10.0
+detect_range = 150
 
 [node name="Attack" type="Node" parent="State Machine"]
 script = ExtResource("4_k7vol")
@@ -79,3 +82,8 @@ script = ExtResource("5_6pxed")
 
 [node name="Death" type="Node" parent="State Machine"]
 script = ExtResource("6_2bgyx")
+
+[node name="Follow" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy", "spr")]
+script = ExtResource("8_715cw")
+enemy = NodePath("../..")
+spr = NodePath("../../EnemySprite")

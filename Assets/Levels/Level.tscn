@@ -4,7 +4,6 @@
 [ext_resource type="Script" path="res://Assets/Levels/Level.gd" id="1_jhjl8"]
 [ext_resource type="PackedScene" uid="uid://fgby3q41mfg3" path="res://Assets/Player/player.tscn" id="1_u7uf5"]
 [ext_resource type="Texture2D" uid="uid://di5i2m3sra87f" path="res://Assets/Sprites/Environment/dirt.png" id="2_ijx3g"]
-[ext_resource type="PackedScene" uid="uid://bw4djsumycjy8" path="res://Assets/Enemy/enemy.tscn" id="2_t3f8c"]
 [ext_resource type="Texture2D" uid="uid://us5ti3b2ucrd" path="res://Assets/Sprites/Environment/Parallax BG/BackmostTrees.png" id="5_rnk47"]
 [ext_resource type="Texture2D" uid="uid://decp0lbqsdjml" path="res://Assets/Sprites/Environment/Parallax BG/Layer_0009_2.png" id="5_sx4ne"]
 [ext_resource type="Shader" path="res://Assets/Shaders/pixelate.gdshader" id="6_3tmtr"]
@@ -68,6 +67,12 @@ shader_parameter/blur = 0.0035
 shader_parameter/colour = Color(1, 1, 1, 1)
 shader_parameter/size = Vector2(0.005, 0.2)
 
+[sub_resource type="Curve2D" id="Curve2D_7wjn4"]
+_data = {
+"points": PackedVector2Array(2.9561, 20.4117, -2.9561, -20.4117, -86.3998, 15.873, -23.9337, 21.0852, 23.9337, -21.0852, -64.3026, -54.189, -28.0829, 1.16638, 28.0829, -1.16638, 0.41037, -74.4291, -26.108, -19.6286, 26.108, 19.6286, 69.8585, -52.632, 5.32097, -20.9949, -5.32097, 20.9949, 84.0638, 17.4299)
+}
+point_count = 5
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_j10l6"]
 light_mode = 2
 
@@ -110,6 +115,7 @@ sources/0 = SubResource("TileSetAtlasSource_dn8np")
 script = ExtResource("1_jhjl8")
 
 [node name="GlobalLight" type="DirectionalLight2D" parent="."]
+visible = false
 light_mask = 0
 energy = 1.43
 blend_mode = 1
@@ -118,9 +124,6 @@ range_layer_max = 10
 range_item_cull_mask = 0
 shadow_item_cull_mask = 0
 metadata/_edit_lock_ = true
-
-[node name="enemy" parent="." instance=ExtResource("2_t3f8c")]
-position = Vector2(296.495, 207.085)
 
 [node name="Parallax" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -220,8 +223,15 @@ offset_right = 1148.0
 offset_bottom = 266.0
 metadata/_edit_lock_ = true
 
+[node name="EnemyPath" type="Path2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(322.74, 214.805)
+scale = Vector2(0.633566, 0.642289)
+curve = SubResource("Curve2D_7wjn4")
+
 [node name="Player" parent="." instance=ExtResource("1_u7uf5")]
 position = Vector2(323, 215)
+metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2.735, 2.735)

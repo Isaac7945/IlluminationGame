@@ -1,3 +1,8 @@
+PathFollow2D
+Node2D
+Sprite2D
+Path2D
+EnemyFollow
 CharacterBody2D
 Area2D
 EnemyDeath
@@ -7,8 +12,3 @@ RigidBody2D
 EnemyIdle
 State
 CollisionShape2D
-Node
-Node2D
-AnimatedSprite2D
-Sprite2D
-Timer

@@ -2,7 +2,9 @@ extends State
 class_name EnemyIdle
 
 @export var enemy: CharacterBody2D
+@export var spr: AnimatedSprite2D
 @export var move_spd := 50.0
+@export var detect_range = 50
 var player: CharacterBody2D
 var max_height: int
 var min_height: int
@@ -15,8 +17,6 @@ func _ready():
 	player = get_tree().get_first_node_in_group('Player')
 	min_height = player.position.y - 50
 	max_height = player.position.y + 10
-	print('max: ', max_height)
-	print('min: ', min_height)
 
 func randomize_wander():
 	if enemy.position.y < min_height:
@@ -37,6 +37,16 @@ func process(delta):
 		wander_time -= delta
 	else:
 		randomize_wander()
+		
+	# Flip sprite to movement
+	if enemy.velocity.x > 0:
+		spr.flip_h = false
+	elif enemy.velocity.x < 0:
+		spr.flip_h = true
+	
+	# Detect if player nearby, start following
+	if enemy.position.distance_to(player.position) < detect_range:
+		Transitioned.emit(self, 'follow')
 
 func physics_process(delta):
 	if enemy: # Move Enemy
