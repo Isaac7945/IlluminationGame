@@ -2,7 +2,7 @@ extends Area2D
 
 var direction: Vector2
 var player: CharacterBody2D
-@export var spd: float = 80
+@export var spd: float = 100
 
 func _ready():
 	player = get_tree().get_first_node_in_group('Player')

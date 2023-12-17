@@ -52,5 +52,15 @@ scale = Vector2(1.4468, 1.4468)
 polygon = PackedVector2Array(9, -2, 80, -32, 79, 27, 9, 2)
 disabled = true
 
+[node name="ZapArea" type="Area2D" parent="."]
+
+[node name="ZapHitbox" type="CollisionPolygon2D" parent="ZapArea"]
+position = Vector2(-3, 0)
+scale = Vector2(1.4468, 1.4468)
+polygon = PackedVector2Array(9, -2, 80, -32, 79, 27, 9, 2)
+disabled = true
+
 [connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]
 [connection signal="body_entered" from="FlashlightArea" to="." method="_on_flashlight_area_body_entered"]
+[connection signal="body_exited" from="FlashlightArea" to="." method="_on_flashlight_area_body_exited"]
+[connection signal="body_entered" from="ZapArea" to="." method="_on_zap_area_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bw4djsumycjy8"]
+[gd_scene load_steps=30 format=3 uid="uid://bw4djsumycjy8"]
 
 [ext_resource type="Script" path="res://Assets/Enemy/Enemy.gd" id="1_ycvc0"]
 [ext_resource type="Texture2D" uid="uid://b6ypoioxqjgpy" path="res://Assets/Sprites/Enemy/Wisp/Wisp-sheet.png" id="2_fsurl"]
@@ -95,6 +95,7 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_6hkrw"]
 resource_name = "idle"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -142,6 +143,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EnemySprite:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_045c1"]
@@ -257,11 +270,129 @@ tracks/5/keys = {
 "update": 0,
 "values": [1.51, 0.0]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("EnemySprite:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4rvmv"]
+resource_name = "death"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemySprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 0, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemySprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -2), Vector2(-2, -2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EnemySprite/EnemyEyes:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_cwcc4"]
+resource_name = "flashed"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemySprite/EnemyEyes:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EnemySprite/EnemyEyes:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(1.6, 2.4), Vector2(1.6, 1.6), Vector2(1.6, 2.4), Vector2(1.6, 1.6), Vector2(1.6, 2.4)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EnemyLight:enabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EnemySprite:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.396078, 0.360784, 0.34902, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8rhm8"]
 _data = {
 "RESET": SubResource("Animation_045c1"),
 "attack": SubResource("Animation_rwf75"),
+"death": SubResource("Animation_4rvmv"),
+"flashed": SubResource("Animation_cwcc4"),
 "idle": SubResource("Animation_6hkrw")
 }
 
@@ -307,18 +438,20 @@ endlag_timer = NodePath("EndLagTimer")
 
 [node name="EndLagTimer" type="Timer" parent="State Machine/Attack"]
 
-[node name="Flashed" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy", "spr")]
+[node name="Flashed" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy", "spr", "anim")]
 script = ExtResource("5_6pxed")
 enemy = NodePath("../..")
 spr = NodePath("../../EnemySprite")
+anim = NodePath("../../EnemyAnimation")
 flashed_color = Color(0.196078, 0.196078, 0.196078, 1)
 
 [node name="FlashedTimer" type="Timer" parent="State Machine/Flashed"]
-wait_time = 3.0
 one_shot = true
 
-[node name="Death" type="Node" parent="State Machine"]
+[node name="Death" type="Node" parent="State Machine" node_paths=PackedStringArray("anim", "enemy")]
 script = ExtResource("6_2bgyx")
+anim = NodePath("../../EnemyAnimation")
+enemy = NodePath("../..")
 
 [node name="Follow" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy", "spr", "moveTimer", "anim")]
 script = ExtResource("8_715cw")

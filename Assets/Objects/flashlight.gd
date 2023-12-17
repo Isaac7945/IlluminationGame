@@ -61,3 +61,15 @@ func _on_regen_timer_timeout():
 func _on_flashlight_area_body_entered(body):
 	if 'flashed' in body:
 		body.flashed()
+		
+
+func _on_flashlight_area_body_exited(body):
+	if 'flash_over' in body:
+		body.flash_over()
+
+
+func _on_zap_area_body_entered(body):
+	if 'zapped' in body:
+		body.zapped()
+
+

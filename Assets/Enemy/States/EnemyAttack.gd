@@ -18,9 +18,17 @@ func enter():
 	projectile()
 
 func projectile():
+	var player_offset
+	if player.velocity.x > 0:
+		player_offset = 25
+	elif player.velocity.x < 0:
+		player_offset = -25
+	else:
+		player_offset = 0
+		
 	var new_fireball = proj.instantiate()
 	new_fireball.position = enemy.global_position
-	new_fireball.direction = (player.global_position - enemy.global_position).normalized()
+	new_fireball.direction = (Vector2(player.global_position.x + player_offset, player.global_position.y) - enemy.global_position).normalized()
 	projectiles.add_child(new_fireball)
 	
 	endlag_timer.wait_time = attack_endlag

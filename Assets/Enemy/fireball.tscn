@@ -40,6 +40,7 @@ position = Vector2(-3.55271e-15, -1)
 scale = Vector2(0.625, 0.625)
 sprite_frames = SubResource("SpriteFrames_2u8jl")
 animation = &"idle"
+autoplay = "idle"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 light_mask = 8

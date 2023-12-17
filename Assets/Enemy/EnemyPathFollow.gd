@@ -30,6 +30,7 @@ func spawnEnemy():
 	var new_enemy = enemy.instantiate()
 	new_enemy.connect('PathMove', moveEnemy)
 	new_enemy.connect('Flashed', enemy_flashed)
+	new_enemy.connect('Died', enemyDied)
 	my_enemy = new_enemy
 	add_child(new_enemy)
 	
@@ -54,4 +55,7 @@ func moveEnemy():
 	tween_move.tween_property(self, "progress_ratio", new_progress, 1).set_trans(Tween.TRANS_SINE)
 	await tween_move.finished
 	my_enemy.path_move_finished()
+	
+func enemyDied():
+	queue_free()
 
