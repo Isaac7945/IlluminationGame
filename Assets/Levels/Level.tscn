@@ -111,11 +111,10 @@ physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_dn8np")
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" groups=["Level"]]
 script = ExtResource("1_jhjl8")
 
 [node name="GlobalLight" type="DirectionalLight2D" parent="."]
-visible = false
 light_mask = 0
 energy = 1.43
 blend_mode = 1
@@ -272,3 +271,5 @@ metadata/_edit_lock_ = true
 
 [node name="Marker2D" type="Marker2D" parent="GrassSpawners"]
 position = Vector2(288, 231)
+
+[node name="Projectiles" type="Node2D" parent="." groups=["Projectiles"]]

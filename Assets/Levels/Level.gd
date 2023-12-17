@@ -22,4 +22,5 @@ func _process(_delta):
 	
 func spawn_enemy():
 	var new_enemy_follow = enemy_follow_scene.instantiate()
+	new_enemy_follow.rotates = false
 	enemy_path.add_child(new_enemy_follow)

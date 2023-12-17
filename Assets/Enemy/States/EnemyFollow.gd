@@ -5,6 +5,7 @@ class_name EnemyFollow
 @export var spr: AnimatedSprite2D
 @export var moveTimer: Timer
 @export var attack_percentage: int = 40
+@export var anim: AnimationPlayer
 var player: CharacterBody2D
 signal PathMove
 
@@ -13,11 +14,13 @@ func enter():
 	player = get_tree().get_first_node_in_group('Player') 
 	enemy.PathMoveFinished.connect(move_finished)
 	moveTimer.start()
+	anim.play('idle')
 	
 func process(delta):
 	# Flip sprite and look at player
-	spr.flip_v = true if enemy.path_ratio > 0.5 else false
-	enemy.look_at(player.position)
+	enemy.scale.x = enemy.scale.y if enemy.path_ratio < 0.5 else -enemy.scale.y
+	#enemy.look_at(player.position)
+	pass
 	
 	
 func _on_move_timer_timeout():

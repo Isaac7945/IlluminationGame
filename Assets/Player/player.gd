@@ -18,7 +18,9 @@ func _process(delta):
 		if facing != 'left':
 			facing = 'left'
 			scale.x = -scale.y
-	#print($"State Machine".current_state.name.to_lower())
+
+func hit():
+	print('hit player')
 
 
 func _physics_process(delta):

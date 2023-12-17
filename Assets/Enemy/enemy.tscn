@@ -1,52 +1,269 @@
-[gd_scene load_steps=15 format=3 uid="uid://bw4djsumycjy8"]
+[gd_scene load_steps=28 format=3 uid="uid://bw4djsumycjy8"]
 
-[ext_resource type="Texture2D" uid="uid://b2n2gsuyc114a" path="res://Assets/Sprites/Enemy/ghost.png" id="1_3scmi"]
 [ext_resource type="Script" path="res://Assets/Enemy/Enemy.gd" id="1_ycvc0"]
+[ext_resource type="Texture2D" uid="uid://b6ypoioxqjgpy" path="res://Assets/Sprites/Enemy/Wisp/Wisp-sheet.png" id="2_fsurl"]
 [ext_resource type="Script" path="res://Assets/Player/States/State Machine.gd" id="2_tcxlo"]
+[ext_resource type="Texture2D" uid="uid://gojfdhq2wdeb" path="res://Assets/Sprites/Enemy/Wisp/wispeyes.png" id="3_1bqdx"]
 [ext_resource type="Script" path="res://Assets/Enemy/States/EnemyIdle.gd" id="3_comam"]
 [ext_resource type="Script" path="res://Assets/Enemy/States/EnemyAttack.gd" id="4_k7vol"]
 [ext_resource type="Script" path="res://Assets/Enemy/States/EnemyFlashed.gd" id="5_6pxed"]
 [ext_resource type="Script" path="res://Assets/Enemy/States/EnemyDeath.gd" id="6_2bgyx"]
+[ext_resource type="PackedScene" uid="uid://c0nbi8nfiit22" path="res://Assets/Enemy/fireball.tscn" id="7_k0f5w"]
 [ext_resource type="Script" path="res://Assets/Enemy/States/EnemyFollow.gd" id="8_715cw"]
+[ext_resource type="Texture2D" uid="uid://d3we0q0xuouxy" path="res://Assets/Sprites/light.png" id="10_okcga"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jnnx"]
 size = Vector2(12, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_85ler"]
-atlas = ExtResource("1_3scmi")
-region = Rect2(0, 0, 24, 25)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnp0h"]
+atlas = ExtResource("2_fsurl")
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4lj1j"]
-atlas = ExtResource("1_3scmi")
-region = Rect2(0, 25, 24, 25)
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf7si"]
+atlas = ExtResource("2_fsurl")
+region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hhx5o"]
-atlas = ExtResource("1_3scmi")
-region = Rect2(0, 50, 24, 25)
+[sub_resource type="AtlasTexture" id="AtlasTexture_54xnk"]
+atlas = ExtResource("2_fsurl")
+region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hor5o"]
-atlas = ExtResource("1_3scmi")
-region = Rect2(0, 75, 24, 25)
+[sub_resource type="AtlasTexture" id="AtlasTexture_os0jh"]
+atlas = ExtResource("2_fsurl")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4fft"]
+atlas = ExtResource("2_fsurl")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvrkm"]
+atlas = ExtResource("2_fsurl")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5nir"]
+atlas = ExtResource("2_fsurl")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4kic"]
+atlas = ExtResource("2_fsurl")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxeyx"]
+atlas = ExtResource("2_fsurl")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuvy5"]
+atlas = ExtResource("2_fsurl")
+region = Rect2(144, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g66jp"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_85ler")
+"texture": SubResource("AtlasTexture_qnp0h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4lj1j")
+"texture": SubResource("AtlasTexture_uf7si")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hhx5o")
+"texture": SubResource("AtlasTexture_54xnk")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hor5o")
+"texture": SubResource("AtlasTexture_os0jh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4fft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvrkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5nir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4kic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxeyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuvy5")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_6hkrw"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemySprite/EnemyEyes:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EnemySprite/EnemyEyes:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(1.6, 2.4), Vector2(1.6, 1.6), Vector2(1.6, 2.4), Vector2(1.6, 1.6), Vector2(1.6, 2.4)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EnemyLight:enabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_045c1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemySprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemySprite/EnemyEyes:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.6, 2.4)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EnemySprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_rwf75"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemySprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemySprite:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -2), Vector2(-3, -2), Vector2(1, -2), Vector2(-1, -2), Vector2(-5.96046e-08, -2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EnemySprite:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("EnemySprite/EnemyEyes:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("EnemyLight:enabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("EnemyLight:energy")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.51, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8rhm8"]
+_data = {
+"RESET": SubResource("Animation_045c1"),
+"attack": SubResource("Animation_rwf75"),
+"idle": SubResource("Animation_6hkrw")
+}
 
 [node name="enemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -57,29 +274,44 @@ script = ExtResource("1_ycvc0")
 shape = SubResource("RectangleShape2D_5jnnx")
 
 [node name="EnemySprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -2)
+scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_g66jp")
 animation = &"idle"
 autoplay = "idle"
-frame = 2
-frame_progress = 0.571015
+
+[node name="EnemyEyes" type="Sprite2D" parent="EnemySprite"]
+position = Vector2(1.6, 2.4)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_1bqdx")
+hframes = 3
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_tcxlo")
 initial_state = NodePath("Follow")
 
-[node name="Idle" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy", "spr")]
+[node name="Idle" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy", "spr", "anim")]
 script = ExtResource("3_comam")
 enemy = NodePath("../..")
 spr = NodePath("../../EnemySprite")
 move_spd = 10.0
 detect_range = 150
+anim = NodePath("../../EnemyAnimation")
 
-[node name="Attack" type="Node" parent="State Machine"]
+[node name="Attack" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy", "anim", "endlag_timer")]
 script = ExtResource("4_k7vol")
+enemy = NodePath("../..")
+anim = NodePath("../../EnemyAnimation")
+proj = ExtResource("7_k0f5w")
+endlag_timer = NodePath("EndLagTimer")
 
-[node name="Flashed" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
+[node name="EndLagTimer" type="Timer" parent="State Machine/Attack"]
+
+[node name="Flashed" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy", "spr")]
 script = ExtResource("5_6pxed")
 enemy = NodePath("../..")
+spr = NodePath("../../EnemySprite")
+flashed_color = Color(0.196078, 0.196078, 0.196078, 1)
 
 [node name="FlashedTimer" type="Timer" parent="State Machine/Flashed"]
 wait_time = 3.0
@@ -88,14 +320,31 @@ one_shot = true
 [node name="Death" type="Node" parent="State Machine"]
 script = ExtResource("6_2bgyx")
 
-[node name="Follow" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy", "spr", "moveTimer")]
+[node name="Follow" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy", "spr", "moveTimer", "anim")]
 script = ExtResource("8_715cw")
 enemy = NodePath("../..")
 spr = NodePath("../../EnemySprite")
 moveTimer = NodePath("MoveTimer")
+anim = NodePath("../../EnemyAnimation")
 
 [node name="MoveTimer" type="Timer" parent="State Machine/Follow"]
 one_shot = true
 
+[node name="EnemyAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8rhm8")
+}
+autoplay = "idle"
+
+[node name="EnemyLight" type="PointLight2D" parent="."]
+light_mask = 8
+visibility_layer = 8
+enabled = false
+color = Color(0.219608, 0.901961, 1, 1)
+energy = 1.51
+texture = ExtResource("10_okcga")
+texture_scale = 0.1
+
+[connection signal="timeout" from="State Machine/Attack/EndLagTimer" to="State Machine/Attack" method="_on_end_lag_timer_timeout"]
 [connection signal="timeout" from="State Machine/Flashed/FlashedTimer" to="State Machine/Flashed" method="_on_flashed_timer_timeout"]
 [connection signal="timeout" from="State Machine/Follow/MoveTimer" to="State Machine/Follow" method="_on_move_timer_timeout"]

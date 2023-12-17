@@ -20,3 +20,7 @@ res://Assets/Enemy/Enemy.gd
 res://Assets/Objects/flashlight.gd
 res://Assets/Enemy/States/EnemyFlashed.gd
 res://Assets/Enemy/States/EnemyAttack.gd
+res://Assets/Enemy/States/EnemyIdle.gd
+res://Assets/Enemy/fireball.tscn
+res://Assets/Enemy/fireball.gd
+res://Assets/Player/player.gd

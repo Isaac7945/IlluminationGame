@@ -108,6 +108,7 @@ secondary_action={
 2d_render/layer_1="Global Light"
 2d_render/layer_2="Flashlight"
 2d_render/layer_3="Player Light"
+2d_render/layer_4="Enemy Light"
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Enemies"
 2d_physics/layer_3="Solid"

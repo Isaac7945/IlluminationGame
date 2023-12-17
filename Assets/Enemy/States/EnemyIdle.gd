@@ -5,6 +5,7 @@ class_name EnemyIdle
 @export var spr: AnimatedSprite2D
 @export var move_spd := 50.0
 @export var detect_range = 50
+@export var anim: AnimationPlayer
 var player: CharacterBody2D
 var max_height: int
 var min_height: int
@@ -17,6 +18,8 @@ func _ready():
 	player = get_tree().get_first_node_in_group('Player')
 	min_height = player.position.y - 50
 	max_height = player.position.y + 10
+	
+	anim.play('idle')
 
 func randomize_wander():
 	if enemy.position.y < min_height:
