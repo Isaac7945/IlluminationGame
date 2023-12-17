@@ -20,6 +20,12 @@ func _ready():
 	max_height = player.position.y + 10
 	
 	anim.play('idle')
+	
+	if enemy.house_enemy:
+		await get_tree().create_timer(1).timeout
+		Transitioned.emit(self, 'attack')
+	else:
+		Transitioned.emit(self, 'follow')
 
 func randomize_wander():
 	if enemy.position.y < min_height:
@@ -33,7 +39,8 @@ func randomize_wander():
 	wander_time = randf_range(1, 3)
 
 func enter():
-	randomize_wander()
+	if !enemy.house_enemy:
+		randomize_wander()
 
 func process(delta):
 	if wander_time > 0:
@@ -48,10 +55,11 @@ func process(delta):
 		spr.flip_h = true
 	
 	# Detect if player nearby, start following
-	if enemy.position.distance_to(player.position) < detect_range:
+	if enemy.position.distance_to(player.position) < detect_range and !enemy.house_enemy:
 		Transitioned.emit(self, 'follow')
 
 func physics_process(delta):
 	if enemy: # Move Enemy
-		enemy.velocity = move_direction * move_spd
+		if !enemy.house_enemy:
+			enemy.velocity = move_direction * move_spd
 

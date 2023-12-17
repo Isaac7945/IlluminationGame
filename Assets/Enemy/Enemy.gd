@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var state_machine = $"State Machine"
 @onready var flashed_timer = $"State Machine/Flashed/FlashedTimer"
 var path_ratio: float
+var house_enemy = false
 signal PathMove
 signal Flashed
 signal PathMoveFinished

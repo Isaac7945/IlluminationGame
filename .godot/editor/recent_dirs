@@ -1,3 +1,6 @@
+res://Assets/Environment
+res://Assets/Sprites/Environment
+res://Assets/Levels
 res://Assets/Enemy
 res://Assets/Sprites/Enemy/Wisp
 res://Assets/Sprites/Enemy
@@ -6,9 +9,7 @@ res://Assets/UI
 res://Assets/Global
 res://Assets/Shaders
 res://Assets
-res://Assets/Environment
 res://Assets/Objects
 res://Assets/Player
 res://Assets/Sprites
 res://Assets/Player/States
-res://Assets/Levels

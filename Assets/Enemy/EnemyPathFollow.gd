@@ -9,6 +9,7 @@ var tween_move
 var enemy_closer_spd = 0.1
 
 func _ready():
+	progress_ratio = randf()
 	player = get_tree().get_first_node_in_group('Player')
 	rotates = false
 

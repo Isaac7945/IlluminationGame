@@ -2,6 +2,10 @@ extends Node2D
 
 var _smoothed_mouse_pos: Vector2
 var player: CharacterBody2D
+var start = false
+var follow_mouse = true
+@onready var flashlight = $Offset/Flashlight
+
 @onready var outer_arm = %OuterArm
 @onready var inner_arm = %InnerArm
 
@@ -9,10 +13,21 @@ var player: CharacterBody2D
 func _ready():
 	player = get_tree().get_first_node_in_group('Player')
 	player.change_facing.connect(handle_facing)
+	global.game_start.connect(arm_start)
 
 func _process(delta):
 	_smoothed_mouse_pos = lerp(_smoothed_mouse_pos, get_global_mouse_position(), 0.1)
-	$Offset.look_at(_smoothed_mouse_pos)
+	
+	if flashlight.playing_zap:
+		follow_mouse = false
+	else:
+		follow_mouse = true
+	
+	if start and follow_mouse:
+		$Offset.look_at(_smoothed_mouse_pos)
+
+func arm_start():
+	start = true
 
 func handle_facing():
 	match(player.facing):

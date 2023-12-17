@@ -1,0 +1,136 @@
+[gd_scene load_steps=19 format=3 uid="uid://cc8irirlfbu85"]
+
+[ext_resource type="Script" path="res://Assets/Environment/house.gd" id="1_1ijbb"]
+[ext_resource type="PackedScene" uid="uid://bw4djsumycjy8" path="res://Assets/Enemy/enemy.tscn" id="2_0o83t"]
+[ext_resource type="Texture2D" uid="uid://bv3o0kjokkikk" path="res://Assets/Sprites/Environment/Door_Animation.png" id="2_i2bko"]
+[ext_resource type="Texture2D" uid="uid://brrs4laa8twdp" path="res://Assets/Sprites/Environment/housewindow.png" id="3_v1poe"]
+[ext_resource type="Texture2D" uid="uid://d3we0q0xuouxy" path="res://Assets/Sprites/light.png" id="4_2fcv8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obrmm"]
+atlas = ExtResource("2_i2bko")
+region = Rect2(0, 0, 145, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rq0n"]
+atlas = ExtResource("2_i2bko")
+region = Rect2(145, 0, 145, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hv7m"]
+atlas = ExtResource("2_i2bko")
+region = Rect2(290, 0, 145, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n78dt"]
+atlas = ExtResource("2_i2bko")
+region = Rect2(435, 0, 145, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adyvm"]
+atlas = ExtResource("2_i2bko")
+region = Rect2(580, 0, 145, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikisa"]
+atlas = ExtResource("2_i2bko")
+region = Rect2(725, 0, 145, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnrjh"]
+atlas = ExtResource("2_i2bko")
+region = Rect2(870, 0, 145, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3iay0"]
+atlas = ExtResource("2_i2bko")
+region = Rect2(1015, 0, 145, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_138mg"]
+atlas = ExtResource("2_i2bko")
+region = Rect2(1160, 0, 145, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew5ic"]
+atlas = ExtResource("2_i2bko")
+region = Rect2(1305, 0, 145, 127)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ayej1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obrmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rq0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hv7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n78dt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adyvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikisa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnrjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3iay0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_138mg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew5ic")
+}],
+"loop": false,
+"name": &"open",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sg5a"]
+size = Vector2(112, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sewcb"]
+size = Vector2(14, 44)
+
+[node name="house" type="Area2D"]
+collision_layer = 32
+script = ExtResource("1_1ijbb")
+enemy_scene = ExtResource("2_0o83t")
+
+[node name="HouseSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(47, -17)
+sprite_frames = SubResource("SpriteFrames_ayej1")
+animation = &"open"
+frame = 1
+
+[node name="HouseCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3sg5a")
+
+[node name="HouseWindow" type="Sprite2D" parent="."]
+position = Vector2(75.5, 1.48438)
+scale = Vector2(1.03125, 1.03125)
+texture = ExtResource("3_v1poe")
+hframes = 2
+
+[node name="DespawnArea" type="Area2D" parent="."]
+collision_layer = 64
+
+[node name="DespawnCollision" type="CollisionShape2D" parent="DespawnArea"]
+position = Vector2(42, 12)
+shape = SubResource("RectangleShape2D_sewcb")
+
+[node name="WindowLight" type="PointLight2D" parent="."]
+position = Vector2(75.515, 0)
+energy = 2.0
+texture = ExtResource("4_2fcv8")
+metadata/_edit_lock_ = true
+
+[node name="Enemies" type="Node2D" parent="." groups=["House"]]
+
+[node name="HouseLight" type="PointLight2D" parent="."]
+visible = false
+enabled = false
+energy = 2.0
+texture = ExtResource("4_2fcv8")
+texture_scale = 1.2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="DespawnArea" to="." method="_on_despawn_area_body_entered"]

@@ -114,6 +114,8 @@ secondary_action={
 2d_physics/layer_3="Solid"
 2d_physics/layer_4="Flashlight"
 2d_physics/layer_5="Zap"
+2d_physics/layer_6="House"
+2d_physics/layer_7="Despawn"
 
 [physics]
 
