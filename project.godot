@@ -10,11 +10,13 @@ config_version=5
 
 [application]
 
-config/name="Illumination Game"
+config/name="Return Home"
 config/description="By Kanin
 "
 run/main_scene="res://Extras/Scenes/InitApp/InitApp.tscn"
 config/features=PackedStringArray("4.2")
+boot_splash/show_image=false
+boot_splash/image="res://icon.png"
 config/icon="res://App/gameicon.png"
 
 [autoload]

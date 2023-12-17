@@ -22,9 +22,7 @@ func _add_textures_to_container(textures : Array[Texture2D]):
 		%ImagesContainer.call_deferred("add_child", texture_rect)
 
 func _event_skips_intro(event : InputEvent):
-	return event.is_action_released("ui_accept") or \
-		event.is_action_released("ui_select") or \
-		event.is_action_released("ui_cancel")
+	return true
 
 func _event_is_mouse_button_released(event : InputEvent):
 	return event is InputEventMouseButton and not event.is_pressed()

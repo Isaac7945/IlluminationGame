@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://fgby3q41mfg3"]
+[gd_scene load_steps=41 format=3 uid="uid://fgby3q41mfg3"]
 
 [ext_resource type="Script" path="res://Assets/Player/player.gd" id="1_res3i"]
 [ext_resource type="Texture2D" uid="uid://dgqsxgcu3q67x" path="res://Assets/Sprites/Player/idle left.png" id="2_csy5g"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://bs7i7oten8eq2" path="res://Assets/Player/Arm.tscn" id="6_8mnej"]
 [ext_resource type="Script" path="res://Assets/Player/States/PlayerWalk.gd" id="9_7kf2c"]
 [ext_resource type="Texture2D" uid="uid://d3we0q0xuouxy" path="res://Assets/Sprites/light.png" id="10_gs3x6"]
+[ext_resource type="AudioStream" uid="uid://cil1yi5h3gh3p" path="res://Audio/walkingongrass.mp3" id="11_cis02"]
+[ext_resource type="AudioStream" uid="uid://cl63jv2hr8jat" path="res://Audio/slowfootsteps.mp3" id="12_uys45"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m1ksg"]
 size = Vector2(18, 30)
@@ -417,11 +419,13 @@ script = ExtResource("5_d52ff")
 anim = NodePath("../../AnimationPlayer")
 player = NodePath("../..")
 
-[node name="Walk" type="Node" parent="State Machine" node_paths=PackedStringArray("anim", "player")]
+[node name="Walk" type="Node" parent="State Machine" node_paths=PackedStringArray("anim", "player", "grass_audio", "slow_audio")]
 unique_name_in_owner = true
 script = ExtResource("9_7kf2c")
 anim = NodePath("../../AnimationPlayer")
 player = NodePath("../..")
+grass_audio = NodePath("../../GrassWalkingAudio")
+slow_audio = NodePath("../../SlowWalkingAudio")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -438,3 +442,12 @@ shadow_item_cull_mask = 4
 texture = ExtResource("10_gs3x6")
 texture_scale = 0.2
 metadata/_edit_lock_ = true
+
+[node name="GrassWalkingAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_cis02")
+bus = &"SFX"
+
+[node name="SlowWalkingAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_uys45")
+volume_db = 4.685
+bus = &"SFX"

@@ -3,10 +3,15 @@ extends CanvasLayer
 var bat_max = global.battery_max
 var bat_min = global.battery_min
 @onready var battery_bar: TextureProgressBar = %BatteryProgressBar
+@onready var charge_progress_bar = $ChargeContainer/ChargeProgressBar
 @onready var heart_container = $HeartContainer
 @onready var heart_1 = %Heart1
 @onready var heart_2 = %Heart2
 @onready var heart_3 = %Heart3
+var charging = false:
+	set(value):
+		charging = value
+		charge_progress_bar.visible = value
 
 @export_color_no_alpha var progress_bar_off # Gray color for off
 
@@ -25,12 +30,15 @@ var low_battery_spr = preload("res://Assets/Sprites/UI/statusdarkestgreen.png")
 func _ready():
 	heart_container.modulate = hearts_off_alpha
 	battery_bar.visible = false
+	charge_progress_bar.visible = false
 	
 	global.game_start.connect(enable_ui) # connect signal from global
+	global.game_over.connect(gameover)
 	battery_ui_switch(false) # Battery off by default
 
 func _process(_delta):
 	battery_bar.value = global.battery # Progress bar is equal to battery left
+	charge_progress_bar.value = global.zap_charge
 	
 	# Change progress sprite when low
 	if global.battery < (bat_max / 4) + bat_min:
@@ -72,3 +80,8 @@ func battery_ui_switch(flashlight):
 
 func enable_ui():
 	battery_bar.visible = true
+	
+func gameover():
+	battery_bar.visible = false
+	charge_progress_bar.visible = false
+	heart_container.visible = false

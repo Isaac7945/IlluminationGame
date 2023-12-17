@@ -10,6 +10,9 @@ func _ready():
 
 func _process(delta):
 	position += direction * spd * delta
+	
+func hit():
+	queue_free()
 
 
 func _on_body_entered(body):

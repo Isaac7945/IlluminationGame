@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://cc8irirlfbu85"]
+[gd_scene load_steps=20 format=3 uid="uid://cc8irirlfbu85"]
 
 [ext_resource type="Script" path="res://Assets/Environment/house.gd" id="1_1ijbb"]
 [ext_resource type="PackedScene" uid="uid://bw4djsumycjy8" path="res://Assets/Enemy/enemy.tscn" id="2_0o83t"]
 [ext_resource type="Texture2D" uid="uid://bv3o0kjokkikk" path="res://Assets/Sprites/Environment/Door_Animation.png" id="2_i2bko"]
 [ext_resource type="Texture2D" uid="uid://brrs4laa8twdp" path="res://Assets/Sprites/Environment/housewindow.png" id="3_v1poe"]
 [ext_resource type="Texture2D" uid="uid://d3we0q0xuouxy" path="res://Assets/Sprites/light.png" id="4_2fcv8"]
+[ext_resource type="AudioStream" uid="uid://crax4nm0ne400" path="res://Audio/electriciyshortcurcuit.mp3" id="6_6sebq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_obrmm"]
 atlas = ExtResource("2_i2bko")
@@ -131,6 +132,10 @@ enabled = false
 energy = 2.0
 texture = ExtResource("4_2fcv8")
 texture_scale = 1.2
+
+[node name="ShortCircuitAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_6sebq")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="DespawnArea" to="." method="_on_despawn_area_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bw4djsumycjy8"]
+[gd_scene load_steps=31 format=3 uid="uid://bw4djsumycjy8"]
 
 [ext_resource type="Script" path="res://Assets/Enemy/Enemy.gd" id="1_ycvc0"]
 [ext_resource type="Texture2D" uid="uid://b6ypoioxqjgpy" path="res://Assets/Sprites/Enemy/Wisp/Wisp-sheet.png" id="2_fsurl"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c0nbi8nfiit22" path="res://Assets/Enemy/fireball.tscn" id="7_k0f5w"]
 [ext_resource type="Script" path="res://Assets/Enemy/States/EnemyFollow.gd" id="8_715cw"]
 [ext_resource type="Texture2D" uid="uid://d3we0q0xuouxy" path="res://Assets/Sprites/light.png" id="10_okcga"]
+[ext_resource type="AudioStream" uid="uid://bexgxnrkcwo6v" path="res://Audio/ghostdie.mp3" id="12_sssip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jnnx"]
 size = Vector2(18, 24)
@@ -460,10 +461,11 @@ flashed_color = Color(0.196078, 0.196078, 0.196078, 1)
 [node name="FlashedTimer" type="Timer" parent="State Machine/Flashed"]
 one_shot = true
 
-[node name="Death" type="Node" parent="State Machine" node_paths=PackedStringArray("anim", "enemy")]
+[node name="Death" type="Node" parent="State Machine" node_paths=PackedStringArray("anim", "enemy", "deathsound")]
 script = ExtResource("6_2bgyx")
 anim = NodePath("../../EnemyAnimation")
 enemy = NodePath("../..")
+deathsound = NodePath("../../DeathAudio")
 
 [node name="Follow" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy", "spr", "moveTimer", "anim")]
 script = ExtResource("8_715cw")
@@ -490,6 +492,10 @@ energy = 1.51
 texture = ExtResource("10_okcga")
 texture_scale = 0.1
 metadata/_edit_lock_ = true
+
+[node name="DeathAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_sssip")
+bus = &"SFX"
 
 [connection signal="timeout" from="State Machine/Attack/EndLagTimer" to="State Machine/Attack" method="_on_end_lag_timer_timeout"]
 [connection signal="timeout" from="State Machine/Flashed/FlashedTimer" to="State Machine/Flashed" method="_on_flashed_timer_timeout"]

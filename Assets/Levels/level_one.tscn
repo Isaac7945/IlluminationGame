@@ -46,6 +46,10 @@ shader_parameter/size = Vector2(0.003, 0.2)
 
 [node name="Level_one" instance=ExtResource("1_qheu1")]
 
+[node name="house" parent="." index="3"]
+position = Vector2(3060, 203)
+scale = Vector2(0.785, 0.785)
+
 [node name="Ground" type="TileMap" parent="." index="7"]
 modulate = Color(0, 0.619608, 0.85098, 1)
 tile_set = SubResource("TileSet_akq7x")
@@ -59,7 +63,4 @@ offset_left = 129.0
 offset_top = 2.0
 offset_right = 3623.0
 offset_bottom = 279.0
-
-[node name="house" parent="." index="9"]
-position = Vector2(3060, 201)
-scale = Vector2(0.785, 0.785)
+metadata/_edit_lock_ = true

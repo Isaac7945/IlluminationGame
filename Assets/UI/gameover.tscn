@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckdkjf027cxhx"]
+
+[ext_resource type="Script" path="res://Assets/UI/gameover.gd" id="1_lsykn"]
+[ext_resource type="FontFile" uid="uid://bb62k5uvu03bi" path="res://StayPixelRegular-EaOxl.ttf" id="2_2om0p"]
+[ext_resource type="Theme" uid="uid://jg01y3wjm1f1" path="res://theme.tres" id="3_hqcdb"]
+
+[sub_resource type="Theme" id="Theme_px4fi"]
+default_font = ExtResource("2_2om0p")
+default_font_size = 70
+
+[node name="gameover" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_lsykn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.454902)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = -102.0
+offset_right = 114.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_px4fi")
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_hqcdb")
+text = "Retry"
+
+[connection signal="button_up" from="MarginContainer/VBoxContainer/RetryButton" to="." method="_on_retry_button_button_up"]

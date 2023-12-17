@@ -1,10 +1,10 @@
 extends Control
 
 
-@export_file("*.tscn") var game_scene_path : String
+@export_file("*.tscn") var game_scene_path : String = "res://Assets/Levels/Level_one.tscn"
 @export var options_packed_scene : PackedScene
 @export var credits_packed_scene : PackedScene
-@export var version_name: String = '0.0.0'
+@export var version_name: String = '1.0.0'
 
 var animation_state_machine : AnimationNodeStateMachinePlayback
 var options_scene
@@ -15,7 +15,7 @@ func load_scene(scene_path : String):
 	SceneLoader.load_scene(scene_path)
 
 func play_game():
-	SceneLoader.load_scene("res://Assets/Levels/Level_one.tscn")
+	get_tree().change_scene_to_file("res://Assets/Levels/level_one.tscn")
 
 func _open_sub_menu(menu : Control):
 	menu.visible = true

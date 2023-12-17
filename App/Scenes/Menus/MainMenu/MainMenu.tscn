@@ -1,10 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://c6k5nnpbypshi"]
+[gd_scene load_steps=23 format=3 uid="uid://c6k5nnpbypshi"]
 
 [ext_resource type="Script" path="res://App/Scenes/Menus/MainMenu/MainMenu.gd" id="1"]
 [ext_resource type="PackedScene" uid="uid://bvwl11s2p0hd" path="res://App/Scenes/Menus/OptionsMenu/MasterOptionsMenu.tscn" id="2_ewwbc"]
 [ext_resource type="PackedScene" uid="uid://t2dui8ppm3a4" path="res://App/Scenes/Credits/Credits.tscn" id="3_lcwf5"]
 [ext_resource type="Script" path="res://App/Scripts/CaptureFocus.gd" id="4_l1ebe"]
+[ext_resource type="FontFile" uid="uid://bb62k5uvu03bi" path="res://StayPixelRegular-EaOxl.ttf" id="4_loqbt"]
 [ext_resource type="PackedScene" uid="uid://doj1dmgtf0a71" path="res://App/Scenes/UI/SoundButton/SoundButton.tscn" id="5"]
+[ext_resource type="Theme" uid="uid://jg01y3wjm1f1" path="res://theme.tres" id="5_mskjp"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "Intro"
@@ -293,7 +295,12 @@ states/OpenSubMenu/node = SubResource("13")
 states/OpenSubMenu/position = Vector2(734, 123)
 states/Start/position = Vector2(82, 123)
 transitions = ["Intro", "OpenMainMenu", SubResource("11"), "OpenMainMenu", "OpenSubMenu", SubResource("14"), "Start", "Intro", SubResource("AnimationNodeStateMachineTransition_j0orr"), "OpenSubMenu", "OpenMainMenu", SubResource("AnimationNodeStateMachineTransition_63dxc")]
-graph_offset = Vector2(-135, 43)
+graph_offset = Vector2(-173, 33)
+
+[sub_resource type="Theme" id="Theme_akk4l"]
+default_base_scale = 0.06
+default_font = ExtResource("4_loqbt")
+default_font_size = 80
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -303,6 +310,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
+game_scene_path = "res://Assets/Levels/level_one.tscn"
 options_packed_scene = ExtResource("2_ewwbc")
 credits_packed_scene = ExtResource("3_lcwf5")
 
@@ -319,6 +327,15 @@ tree_root = SubResource("8")
 anim_player = NodePath("../MenuAnimationPlayer")
 parameters/conditions/intro_done = false
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.129412, 0, 0.482353, 1)
+
 [node name="VersionNameLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
@@ -333,6 +350,7 @@ offset_right = -8.0
 offset_bottom = -7.0
 grow_horizontal = 0
 grow_vertical = 0
+text = "v1.0"
 horizontal_alignment = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -356,16 +374,18 @@ layout_mode = 2
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer/TitlesMargin/TitlesContainer"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 48
-text = "Illumination Game"
+theme = SubResource("Theme_akk4l")
+theme_override_font_sizes/font_size = 70
+text = "Return Home"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SubTitle" type="Label" parent="MarginContainer/VBoxContainer/TitlesMargin/TitlesContainer"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+theme = ExtResource("5_mskjp")
 theme_override_font_sizes/font_size = 24
-text = "text"
+text = "By Kanin"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -405,6 +425,7 @@ text = "Credits"
 
 [node name="ExitButton" parent="MarginContainer/VBoxContainer/MenuMargin/MenuButtons" instance=ExtResource("5")]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(128, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -432,6 +453,7 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 32
 
 [node name="FlowControlContainer" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cahirw72kwto"]
+[gd_scene load_steps=13 format=3 uid="uid://cahirw72kwto"]
 
 [ext_resource type="Texture2D" uid="uid://0dl8pvo0utd0" path="res://Assets/Sprites/flashlight small.png" id="1_vf44i"]
 [ext_resource type="Script" path="res://Assets/Objects/flashlight.gd" id="1_xct4i"]
 [ext_resource type="Texture2D" uid="uid://d3we0q0xuouxy" path="res://Assets/Sprites/light.png" id="2_d8kgq"]
 [ext_resource type="Shader" path="res://Assets/Shaders/grayscale.gdshader" id="3_p3fu6"]
+[ext_resource type="AudioStream" uid="uid://dgqhq2bm2bwbd" path="res://Audio/flashlighton.mp3" id="5_fyxc2"]
+[ext_resource type="AudioStream" uid="uid://dbhm4c7ev36w" path="res://Audio/flashlightoff.mp3" id="6_46wgi"]
+[ext_resource type="AudioStream" uid="uid://dq5l0r83gh3v3" path="res://Audio/zap.mp3" id="7_m84ru"]
+[ext_resource type="AudioStream" uid="uid://bfj3bi7ct60mh" path="res://Audio/chargingup.mp3" id="8_ml2y4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ptsou"]
 shader = ExtResource("3_p3fu6")
@@ -139,6 +143,22 @@ disabled = true
 libraries = {
 "": SubResource("AnimationLibrary_gy6ja")
 }
+
+[node name="OnAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_fyxc2")
+bus = &"SFX"
+
+[node name="OffAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_46wgi")
+bus = &"SFX"
+
+[node name="ZapAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_m84ru")
+bus = &"SFX"
+
+[node name="ChargeAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ml2y4")
+bus = &"SFX"
 
 [connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]
 [connection signal="timeout" from="ZapChargeTimer" to="." method="_on_zap_charge_timer_timeout"]

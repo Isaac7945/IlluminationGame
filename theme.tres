@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://jg01y3wjm1f1"]
+
+[ext_resource type="FontFile" uid="uid://bb62k5uvu03bi" path="res://StayPixelRegular-EaOxl.ttf" id="1_npw54"]
+
+[resource]
+default_font = ExtResource("1_npw54")
+default_font_size = 20

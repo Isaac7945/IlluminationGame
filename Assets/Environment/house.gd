@@ -4,6 +4,8 @@ extends Area2D
 @onready var window_light = $WindowLight
 @onready var house_window = $HouseWindow
 @onready var enemies = $Enemies
+@onready var short_circuit_audio = $ShortCircuitAudio
+
 var lights = true:
 	set(value):
 		lights = value
@@ -26,6 +28,7 @@ func _ready():
 	window_light.enabled = true
 	
 	await get_tree().create_timer(2.5).timeout
+	short_circuit_audio.play()
 	flicker()
 
 
@@ -47,7 +50,7 @@ func flicker():
 
 func _on_despawn_area_body_entered(body):
 	if body == player:
-		body.queue_free()
+		global.game_win.emit()
 		house_lights()
 
 func house_lights():

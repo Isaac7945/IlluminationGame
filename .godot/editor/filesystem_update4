@@ -26,3 +26,13 @@ res://Assets/Player/Arm.gd
 res://Assets/Player/Arm.tscn
 res://Assets/Objects/flashlight.tscn
 res://Assets/Objects/flashlight.gd
+res://Assets/Enemy/fireball.tscn
+res://Assets/Enemy/fireball.gd
+res://Assets/Player/States/PlayerWalk.gd
+res://Assets/UI/gameover.gd
+res://Assets/UI/gameover.tscn
+res://Assets/Enemy/States/EnemyDeath.gd
+res://App/Scenes/Menus/MainMenu/MainMenu.tscn
+res://Extras/Scenes/Opening/Opening.tscn
+res://Extras/Scenes/Opening/Opening.gd
+res://Extras/Scenes/InitApp/InitApp.tscn
