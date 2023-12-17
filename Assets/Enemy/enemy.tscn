@@ -77,13 +77,25 @@ detect_range = 150
 [node name="Attack" type="Node" parent="State Machine"]
 script = ExtResource("4_k7vol")
 
-[node name="Flashed" type="Node" parent="State Machine"]
+[node name="Flashed" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy")]
 script = ExtResource("5_6pxed")
+enemy = NodePath("../..")
+
+[node name="FlashedTimer" type="Timer" parent="State Machine/Flashed"]
+wait_time = 3.0
+one_shot = true
 
 [node name="Death" type="Node" parent="State Machine"]
 script = ExtResource("6_2bgyx")
 
-[node name="Follow" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy", "spr")]
+[node name="Follow" type="Node" parent="State Machine" node_paths=PackedStringArray("enemy", "spr", "moveTimer")]
 script = ExtResource("8_715cw")
 enemy = NodePath("../..")
 spr = NodePath("../../EnemySprite")
+moveTimer = NodePath("MoveTimer")
+
+[node name="MoveTimer" type="Timer" parent="State Machine/Follow"]
+one_shot = true
+
+[connection signal="timeout" from="State Machine/Flashed/FlashedTimer" to="State Machine/Flashed" method="_on_flashed_timer_timeout"]
+[connection signal="timeout" from="State Machine/Follow/MoveTimer" to="State Machine/Follow" method="_on_move_timer_timeout"]

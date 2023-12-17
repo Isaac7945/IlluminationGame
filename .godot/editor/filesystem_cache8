@@ -1,9 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1702700403
+::res://::1702783158
 ATTRIBUTION.md::TextFile::-1::1702246432::0::1::::<><>::
 ATTRIBUTION_example.md::TextFile::-1::1702246432::0::1::::<><>::
 default_bus_layout.tres::AudioBusLayout::7962077120942509160::1702246432::0::1::::<><>::
-default_env.tres::Environment::7644774145736501582::1702661914::0::1::::<><>::
+default_env.tres::Environment::7644774145736501582::1702708749::0::1::::<><>::
 icon.png::CompressedTexture2D::6138412360554477131::1702246432::1702247059::1::::<><>::
 icon.svg::CompressedTexture2D::4470293230769917189::1702246432::1702247059::1::::<><>::
 LICENSE.txt::TextFile::-1::1702246432::0::1::::<><>::
@@ -62,43 +62,45 @@ SceneLoader.gd::GDScript::-1::1702272961::0::1::::<>Node<>::
 ::res://App/Themes/::1702246823
 BaseTheme.tres::Theme::677760010048342574::1702246432::0::1::::<><>::
 ::res://Assets/::1702657302
-::res://Assets/Enemy/::1702661869
-Enemy.gd::GDScript::-1::1702661405::0::1::::<>CharacterBody2D<>::
-enemy.tscn::PackedScene::3990641398614768389::1702661869::0::1::::<><>::uid://b2n2gsuyc114a::::res://Assets/Sprites/Enemy/ghost.png<>res://Assets/Enemy/Enemy.gd<>res://Assets/Player/States/State Machine.gd<>res://Assets/Enemy/States/EnemyIdle.gd<>res://Assets/Enemy/States/EnemyAttack.gd<>res://Assets/Enemy/States/EnemyFlashed.gd<>res://Assets/Enemy/States/EnemyDeath.gd
-::res://Assets/Enemy/States/::1702661750
+::res://Assets/Enemy/::1702708738
+Enemy.gd::GDScript::-1::1702703773::0::1::::<>CharacterBody2D<>::
+enemy.tscn::PackedScene::3990641398614768389::1702708738::0::1::::<><>::uid://b2n2gsuyc114a::::res://Assets/Sprites/Enemy/ghost.png<>res://Assets/Enemy/Enemy.gd<>res://Assets/Player/States/State Machine.gd<>res://Assets/Enemy/States/EnemyIdle.gd<>res://Assets/Enemy/States/EnemyAttack.gd<>res://Assets/Enemy/States/EnemyFlashed.gd<>res://Assets/Enemy/States/EnemyDeath.gd<>res://Assets/Enemy/States/EnemyFollow.gd
+EnemyPathFollow.gd::GDScript::-1::1702707613::0::1::::<>PathFollow2D<>::
+::res://Assets/Enemy/States/::1702707901
 EnemyAttack.gd::GDScript::-1::1702658420::0::1::::EnemyAttack<>State<>::
 EnemyDeath.gd::GDScript::-1::1702658393::0::1::::EnemyDeath<>State<>::
 EnemyFlashed.gd::GDScript::-1::1702658405::0::1::::EnemyFlashed<>State<>::
-EnemyIdle.gd::GDScript::-1::1702661750::0::1::::EnemyIdle<>State<>::
-::res://Assets/Environment/::1702661869
+EnemyFollow.gd::GDScript::-1::1702707901::0::1::::EnemyFollow<>State<>::
+EnemyIdle.gd::GDScript::-1::1702703773::0::1::::EnemyIdle<>State<>::
+::res://Assets/Environment/::1702708738
 grass.gd::GDScript::-1::1702530668::0::1::::<>Node2D<>::
-grass.tscn::PackedScene::2628081800486325431::1702661869::0::1::::<><>::res://Assets/Environment/grass.gd<>res://Assets/Shaders/grass.gdshader<>uid://bar5cvcimxopo::::res://Assets/Sprites/Environment/grasscolored.png
+grass.tscn::PackedScene::2628081800486325431::1702708738::0::1::::<><>::res://Assets/Environment/grass.gd<>res://Assets/Shaders/grass.gdshader<>uid://bar5cvcimxopo::::res://Assets/Sprites/Environment/grasscolored.png
 ::res://Assets/Global/::1702619282
 Global.gd::GDScript::-1::1702619282::0::1::::<>Node<>::
-::res://Assets/Levels/::1702661914
-Level.gd::GDScript::-1::1702604317::0::1::::<>Node2D<>::
-Level.tscn::PackedScene::7458484663230655000::1702661914::0::1::::<><>::res://Assets/Shaders/rainsnow.gdshader<>res://Assets/Levels/Level.gd<>uid://fgby3q41mfg3::::res://Assets/Player/player.tscn<>uid://di5i2m3sra87f::::res://Assets/Sprites/Environment/dirt.png<>uid://bw4djsumycjy8::::res://Assets/Enemy/enemy.tscn<>uid://us5ti3b2ucrd::::res://Assets/Sprites/Environment/Parallax BG/BackmostTrees.png<>uid://decp0lbqsdjml::::res://Assets/Sprites/Environment/Parallax BG/Layer_0009_2.png<>res://Assets/Shaders/pixelate.gdshader<>uid://8605mut0f581::::res://Assets/Sprites/Environment/Parallax BG/FrontStems.png<>uid://ctg0k5edsnmm2::::res://Assets/Sprites/Environment/Parallax BG/Layer_0006_4.png<>uid://b87t6s8opyia3::::res://Assets/Sprites/Environment/Parallax BG/ForegroundBushes.png<>uid://cxgk881nixpol::::res://Assets/Sprites/Environment/Parallax BG/FrontLeaves.png<>uid://bod7qe2xk8l48::::res://Assets/Sprites/Environment/Parallax BG/ForegroundLeaves.png
-::res://Assets/Objects/::1702661869
+::res://Assets/Levels/::1702708749
+Level.gd::GDScript::-1::1702708744::0::1::::<>Node2D<>::
+Level.tscn::PackedScene::7458484663230655000::1702708749::0::1::::<><>::res://Assets/Shaders/rainsnow.gdshader<>res://Assets/Levels/Level.gd<>uid://fgby3q41mfg3::::res://Assets/Player/player.tscn<>uid://di5i2m3sra87f::::res://Assets/Sprites/Environment/dirt.png<>uid://us5ti3b2ucrd::::res://Assets/Sprites/Environment/Parallax BG/BackmostTrees.png<>uid://decp0lbqsdjml::::res://Assets/Sprites/Environment/Parallax BG/Layer_0009_2.png<>res://Assets/Shaders/pixelate.gdshader<>uid://8605mut0f581::::res://Assets/Sprites/Environment/Parallax BG/FrontStems.png<>uid://ctg0k5edsnmm2::::res://Assets/Sprites/Environment/Parallax BG/Layer_0006_4.png<>uid://b87t6s8opyia3::::res://Assets/Sprites/Environment/Parallax BG/ForegroundBushes.png<>uid://cxgk881nixpol::::res://Assets/Sprites/Environment/Parallax BG/FrontLeaves.png<>uid://bod7qe2xk8l48::::res://Assets/Sprites/Environment/Parallax BG/ForegroundLeaves.png
+::res://Assets/Objects/::1702708738
 flashlight.gd::GDScript::-1::1702620061::0::1::::<>Node2D<>::
-flashlight.tscn::PackedScene::140817920949752556::1702661869::0::1::::<><>::uid://0dl8pvo0utd0::::res://Assets/Sprites/flashlight small.png<>res://Assets/Objects/flashlight.gd<>uid://d3we0q0xuouxy::::res://Assets/Sprites/light.png<>res://Assets/Shaders/grayscale.gdshader
-::res://Assets/Player/::1702661869
+flashlight.tscn::PackedScene::140817920949752556::1702708738::0::1::::<><>::uid://0dl8pvo0utd0::::res://Assets/Sprites/flashlight small.png<>res://Assets/Objects/flashlight.gd<>uid://d3we0q0xuouxy::::res://Assets/Sprites/light.png<>res://Assets/Shaders/grayscale.gdshader
+::res://Assets/Player/::1702708738
 Arm.gd::GDScript::-1::1702445147::0::1::::<>Node2D<>::
-Arm.tscn::PackedScene::3716423603533287395::1702661869::0::1::::<><>::res://Assets/Player/Arm.gd<>uid://cahirw72kwto::::res://Assets/Objects/flashlight.tscn<>uid://iue4xkueahy5::::res://Assets/Sprites/Player/outer arm.png<>uid://b00qtp4kpeayr::::res://Assets/Sprites/Player/inner arm.png
+Arm.tscn::PackedScene::3716423603533287395::1702708738::0::1::::<><>::res://Assets/Player/Arm.gd<>uid://cahirw72kwto::::res://Assets/Objects/flashlight.tscn<>uid://iue4xkueahy5::::res://Assets/Sprites/Player/outer arm.png<>uid://b00qtp4kpeayr::::res://Assets/Sprites/Player/inner arm.png
 player.gd::GDScript::-1::1702533034::0::1::::<>CharacterBody2D<>::
-player.tscn::PackedScene::363435557484528924::1702661869::0::1::::<><>::res://Assets/Player/player.gd<>uid://dgqsxgcu3q67x::::res://Assets/Sprites/Player/idle left.png<>uid://db5yerxyb2uqq::::res://Assets/Sprites/Player/idle right.png<>uid://c0auxlyqxn3qa::::res://Assets/Sprites/Player/walk left.png<>res://Assets/Player/States/State Machine.gd<>uid://brqhfw7j1vus4::::res://Assets/Sprites/Player/walk right.png<>res://Assets/Player/States/PlayerIdle.gd<>uid://bs7i7oten8eq2::::res://Assets/Player/Arm.tscn<>res://Assets/Player/States/PlayerWalk.gd<>uid://d3we0q0xuouxy::::res://Assets/Sprites/light.png
+player.tscn::PackedScene::363435557484528924::1702708738::0::1::::<><>::res://Assets/Player/player.gd<>uid://dgqsxgcu3q67x::::res://Assets/Sprites/Player/idle left.png<>uid://db5yerxyb2uqq::::res://Assets/Sprites/Player/idle right.png<>uid://c0auxlyqxn3qa::::res://Assets/Sprites/Player/walk left.png<>res://Assets/Player/States/State Machine.gd<>uid://brqhfw7j1vus4::::res://Assets/Sprites/Player/walk right.png<>res://Assets/Player/States/PlayerIdle.gd<>uid://bs7i7oten8eq2::::res://Assets/Player/Arm.tscn<>res://Assets/Player/States/PlayerWalk.gd<>uid://d3we0q0xuouxy::::res://Assets/Sprites/light.png
 ::res://Assets/Player/States/::1702445906
 PlayerIdle.gd::GDScript::-1::1702445632::0::1::::PlayerIdle<>State<>::
 PlayerWalk.gd::GDScript::-1::1702445906::0::1::::PlayerWalk<>State<>::
 State Machine.gd::GDScript::-1::1702412079::0::1::::<>Node<>::
 State.gd::GDScript::-1::1702351016::0::1::::State<>Node<>::
-::res://Assets/Shaders/::1702661918
+::res://Assets/Shaders/::1702708759
 blackmaterial.tres::ShaderMaterial::4057494430090654537::1702528718::0::1::::<><>::res://Assets/Shaders/Gradient.gdshader
-Gradient.gdshader::Shader::-1::1702661918::0::1::::<><>::
-grass.gdshader::Shader::-1::1702661918::0::1::::<><>::
-grayscale.gdshader::Shader::-1::1702661918::0::1::::<><>::
-masking.gdshader::Shader::-1::1702661918::0::1::::<><>::
-pixelate.gdshader::Shader::-1::1702661918::0::1::::<><>::
-rainsnow.gdshader::Shader::-1::1702661918::0::1::::<><>::
+Gradient.gdshader::Shader::-1::1702708759::0::1::::<><>::
+grass.gdshader::Shader::-1::1702708759::0::1::::<><>::
+grayscale.gdshader::Shader::-1::1702708759::0::1::::<><>::
+masking.gdshader::Shader::-1::1702708759::0::1::::<><>::
+pixelate.gdshader::Shader::-1::1702708759::0::1::::<><>::
+rainsnow.gdshader::Shader::-1::1702708759::0::1::::<><>::
 shadows.gdshader::Shader::-1::1702516994::0::1::::<><>::
 ::res://Assets/Sprites/::1702657110
 flashlight small.png::CompressedTexture2D::1761641863293739003::1702447508::1702447508::1::::<><>::
@@ -140,9 +142,9 @@ batteryframe.png::CompressedTexture2D::7351186416689198304::1702602454::17026024
 statusdarkestgreen.png::CompressedTexture2D::7572569237467905883::1702602454::1702602454::1::::<><>::
 statusdarkgreen.png::CompressedTexture2D::737191341283725455::1702602454::1702602454::1::::<><>::
 statusgreen.png::CompressedTexture2D::642424917072350480::1702602454::1702602454::1::::<><>::
-::res://Assets/UI/::1702661869
+::res://Assets/UI/::1702708738
 ui.gd::GDScript::-1::1702619622::0::1::::<>CanvasLayer<>::
-ui.tscn::PackedScene::258380819400410996::1702661869::0::1::::<><>::res://Assets/UI/ui.gd<>res://Assets/Shaders/grayscale.gdshader<>uid://dcy77386qrm1u::::res://Assets/Sprites/UI/batteryframe.png<>uid://jfgv6cnuh3pk::::res://Assets/Sprites/UI/statusgreen.png
+ui.tscn::PackedScene::258380819400410996::1702708738::0::1::::<><>::res://Assets/UI/ui.gd<>res://Assets/Shaders/grayscale.gdshader<>uid://dcy77386qrm1u::::res://Assets/Sprites/UI/batteryframe.png<>uid://jfgv6cnuh3pk::::res://Assets/Sprites/UI/statusgreen.png
 ::res://Extras/::1702246823
 ::res://Extras/Scenes/::1702246823
 ::res://Extras/Scenes/EndCredits/::1702246823

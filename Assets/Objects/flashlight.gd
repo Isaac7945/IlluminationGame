@@ -10,6 +10,7 @@ var regen = false
 
 @onready var regen_timer = $RegenTimer
 @onready var zap_charge_timer = $ZapChargeTimer
+@onready var flashlight_hitbox = $FlashlightArea/FlashlightHitbox
 
 var flashlight: bool = false:
 	set(value):
@@ -30,6 +31,8 @@ func _process(_delta):
 		
 		if regen: # Stop regen on flashlight on/off
 			regen = false
+			
+		flashlight_hitbox.disabled = !flashlight # Hitbox
 	
 	#if regen:
 		#flashlight = false
@@ -53,3 +56,8 @@ func _process(_delta):
 
 func _on_regen_timer_timeout():
 	regen = true
+
+
+func _on_flashlight_area_body_entered(body):
+	if 'flashed' in body:
+		body.flashed()
