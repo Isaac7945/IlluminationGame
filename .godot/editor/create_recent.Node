@@ -1,6 +1,7 @@
+Timer
+ParallaxBackground
 AnimationPlayer
 Area2D
-Timer
 Node2D
 PointLight2D
 AnimatedSprite2D
@@ -11,4 +12,3 @@ CollisionPolygon2D
 Path2D
 EnemyFollow
 CharacterBody2D
-EnemyDeath

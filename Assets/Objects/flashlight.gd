@@ -10,6 +10,7 @@ var regen = false
 var zap_charging = false
 var zapping = false
 var zap_charged = false
+var player: CharacterBody2D
 
 @onready var regen_timer = $RegenTimer
 @onready var zap_charge_timer = $ZapChargeTimer
@@ -27,6 +28,8 @@ var flashlight: bool = false:
 
 @onready var spr = $Sprite2D
 
+func _ready():
+	player = get_tree().get_first_node_in_group('Player')
 
 func _process(_delta):
 	$FlashlightLight.enabled = flashlight
@@ -34,6 +37,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("secondary_action") and !zapping:
 		zap_charging = true
 		zap_charge_timer.start()
+		player.idle() # Make player stop
 		
 		if flashlight:
 			toggle_flashlight()
@@ -45,6 +49,7 @@ func _process(_delta):
 			zapping = false
 			zap_charge_timer.stop()
 			zap_charging = false
+			player.walk()  # Resume walking
 	
 	if zap_charged:
 		if Input.is_action_just_released("secondary_action"):
@@ -57,6 +62,8 @@ func _process(_delta):
 	if flashlight:
 		global.battery -= flashlight_drain
 		spr.frame = 1
+		player.slow = true
+		
 		
 		# Turn flashlight off when no battery
 		if global.battery <= bat_min:
@@ -64,6 +71,7 @@ func _process(_delta):
 			flashlight = false
 	else:
 		spr.frame = 0
+		player.slow = false
 		
 		if regen and global.battery < bat_max:
 			global.battery += regen_amount
@@ -74,6 +82,7 @@ func zap():
 	anim.play('zap')
 	await anim.animation_finished
 	zapping = false
+	player.walk() # Resume walking
 	
 func toggle_flashlight():
 	flashlight = !flashlight

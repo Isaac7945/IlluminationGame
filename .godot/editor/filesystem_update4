@@ -25,3 +25,8 @@ res://Assets/Enemy/fireball.tscn
 res://Assets/Enemy/fireball.gd
 res://Assets/Player/player.gd
 res://Assets/Enemy/States/EnemyDeath.gd
+res://Assets/Global/Global.gd
+res://Assets/Player/States/PlayerIdle.gd
+res://Assets/Player/States/PlayerWalk.gd
+res://App/Scenes/Credits/Credits.tscn
+res://ATTRIBUTION.md

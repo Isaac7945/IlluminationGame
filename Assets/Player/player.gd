@@ -8,6 +8,8 @@ var facing: String = 'right':
 var gravity = 400
 @onready var anim = $AnimatedSprite2D
 @onready var arm = $Arm
+@onready var state_machine = $"State Machine"
+var slow = false
 
 func _process(delta):
 	if get_global_mouse_position().x > position.x:
@@ -21,6 +23,12 @@ func _process(delta):
 
 func hit():
 	print('hit player')
+
+func walk():
+	state_machine.on_child_transition(state_machine.current_state, 'walk')
+
+func idle():
+	state_machine.on_child_transition(state_machine.current_state, 'idle')
 
 
 func _physics_process(delta):

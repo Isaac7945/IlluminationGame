@@ -338,18 +338,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [Vector2(-1, -2), Vector2(0, -3), Vector2(0, -2), Vector2(1, -1), Vector2(0, -2), Vector2(0, -3), Vector2(0, -2), Vector2(1, -1), Vector2(-1, -2)]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer:speed_scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.7]
-}
 
 [sub_resource type="Animation" id="Animation_ni73l"]
 resource_name = "walk_right"
@@ -391,18 +379,6 @@ tracks/2/keys = {
 "update": 1,
 "values": [Vector2(-4, -2), Vector2(-3, -3), Vector2(-3, -2), Vector2(-2, -1), Vector2(-3, -2), Vector2(-3, -3), Vector2(-3, -2), Vector2(-2, -1)]
 }
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimationPlayer:speed_scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.7]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5q3es"]
 _data = {
@@ -424,11 +400,11 @@ shape = SubResource("RectangleShape2D_m1ksg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_1xgtw")
-animation = &"walk_left"
+animation = &"walk_right"
 autoplay = "idle_right"
 
 [node name="Arm" parent="." instance=ExtResource("6_8mnej")]
-position = Vector2(1, -1)
+position = Vector2(-4, -2)
 metadata/_edit_lock_ = true
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
@@ -444,7 +420,6 @@ player = NodePath("../..")
 [node name="Walk" type="Node" parent="State Machine" node_paths=PackedStringArray("anim", "player")]
 unique_name_in_owner = true
 script = ExtResource("9_7kf2c")
-spd = 60
 anim = NodePath("../../AnimationPlayer")
 player = NodePath("../..")
 
@@ -455,7 +430,7 @@ libraries = {
 speed_scale = 0.7
 
 [node name="PlayerGlow" type="PointLight2D" parent="."]
-scale = Vector2(1, 1.435)
+scale = Vector2(1, 1.2)
 energy = 2.0
 range_item_cull_mask = 5
 shadow_enabled = true

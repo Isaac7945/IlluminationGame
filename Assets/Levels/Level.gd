@@ -14,13 +14,19 @@ func _ready():
 	var grass: Array = grass_spawners.get_children()
 	#for new_grass in grass_spawners.get_child_count():
 		#grass.pop_front()
-		
-	spawn_enemy()
 
 func _process(_delta):
 	enemy_path.position = player.position
+	
 	
 func spawn_enemy():
 	var new_enemy_follow = enemy_follow_scene.instantiate()
 	new_enemy_follow.rotates = false
 	enemy_path.add_child(new_enemy_follow)
+
+
+func _on_enemy_spawn_timer_timeout():
+	var spawn_check = randi() % 100
+	if spawn_check < global.spawn_rate:
+		spawn_enemy()
+	$EnemySpawnTimer.start()
