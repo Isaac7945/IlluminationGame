@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cahirw72kwto"]
+[gd_scene load_steps=9 format=3 uid="uid://cahirw72kwto"]
 
 [ext_resource type="Texture2D" uid="uid://0dl8pvo0utd0" path="res://Assets/Sprites/flashlight small.png" id="1_vf44i"]
 [ext_resource type="Script" path="res://Assets/Objects/flashlight.gd" id="1_xct4i"]
@@ -11,6 +11,51 @@ shader_parameter/tint = null
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u4qik"]
 polygon = PackedVector2Array(7, 1, 7, -4, 76, -31, 8, -2, 8, 2, 76, 26, 7, 3)
+
+[sub_resource type="Animation" id="Animation_srijg"]
+resource_name = "zap"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ZapLight:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ZapLight:energy")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [10.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ZapArea/ZapHitbox:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gy6ja"]
+_data = {
+"zap": SubResource("Animation_srijg")
+}
 
 [node name="Flashlight" type="Node2D"]
 script = ExtResource("1_xct4i")
@@ -30,7 +75,21 @@ range_item_cull_mask = 3
 shadow_enabled = true
 shadow_item_cull_mask = 2
 texture = ExtResource("2_d8kgq")
-texture_scale = 0.35
+texture_scale = 0.4
+
+[node name="ZapLight" type="PointLight2D" parent="."]
+material = SubResource("ShaderMaterial_ptsou")
+position = Vector2(9, 0)
+enabled = false
+color = Color(1, 0.756863, 1, 1)
+energy = 0.0
+range_layer_min = -102
+range_layer_max = 1
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_item_cull_mask = 2
+texture = ExtResource("2_d8kgq")
+texture_scale = 0.5
 
 [node name="FlashlightShadow" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_u4qik")
@@ -41,6 +100,7 @@ wait_time = 1.5
 one_shot = true
 
 [node name="ZapChargeTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="FlashlightArea" type="Area2D" parent="."]
 collision_layer = 8
@@ -53,14 +113,23 @@ polygon = PackedVector2Array(9, -2, 80, -32, 79, 27, 9, 2)
 disabled = true
 
 [node name="ZapArea" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
 
 [node name="ZapHitbox" type="CollisionPolygon2D" parent="ZapArea"]
+visible = false
 position = Vector2(-3, 0)
 scale = Vector2(1.4468, 1.4468)
 polygon = PackedVector2Array(9, -2, 80, -32, 79, 27, 9, 2)
 disabled = true
 
+[node name="FlashlightAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gy6ja")
+}
+
 [connection signal="timeout" from="RegenTimer" to="." method="_on_regen_timer_timeout"]
+[connection signal="timeout" from="ZapChargeTimer" to="." method="_on_zap_charge_timer_timeout"]
 [connection signal="body_entered" from="FlashlightArea" to="." method="_on_flashlight_area_body_entered"]
 [connection signal="body_exited" from="FlashlightArea" to="." method="_on_flashlight_area_body_exited"]
 [connection signal="body_entered" from="ZapArea" to="." method="_on_zap_area_body_entered"]

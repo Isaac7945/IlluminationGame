@@ -7,10 +7,15 @@ var bat_min = global.battery_min
 @export var zapper_drain: float = (bat_max / 3) + bat_min
 @export var flashlight_drain: float = 0.05
 var regen = false
+var zap_charging = false
+var zapping = false
+var zap_charged = false
 
 @onready var regen_timer = $RegenTimer
 @onready var zap_charge_timer = $ZapChargeTimer
 @onready var flashlight_hitbox = $FlashlightArea/FlashlightHitbox
+@onready var anim = $FlashlightAnimation
+
 
 var flashlight: bool = false:
 	set(value):
@@ -26,16 +31,27 @@ var flashlight: bool = false:
 func _process(_delta):
 	$FlashlightLight.enabled = flashlight
 	
-	if Input.is_action_just_pressed("primary_action"):
-		flashlight = !flashlight
+	if Input.is_action_just_pressed("secondary_action") and !zapping:
+		zap_charging = true
+		zap_charge_timer.start()
 		
-		if regen: # Stop regen on flashlight on/off
-			regen = false
+		if flashlight:
+			toggle_flashlight()
 			
-		flashlight_hitbox.disabled = !flashlight # Hitbox
+		zapping = true
+
+	if zap_charging:
+		if Input.is_action_just_released("secondary_action"):
+			zapping = false
+			zap_charge_timer.stop()
+			zap_charging = false
 	
-	#if regen:
-		#flashlight = false
+	if zap_charged:
+		if Input.is_action_just_released("secondary_action"):
+			zap()
+	
+	if Input.is_action_just_pressed("primary_action") and !zapping:
+		toggle_flashlight()
 	
 	# Drain flashlight
 	if flashlight:
@@ -53,6 +69,19 @@ func _process(_delta):
 			global.battery += regen_amount
 		
 
+func zap():
+	zap_charged = false
+	anim.play('zap')
+	await anim.animation_finished
+	zapping = false
+	
+func toggle_flashlight():
+	flashlight = !flashlight
+	
+	if regen: # Stop regen on flashlight on/off
+		regen = false
+		
+	flashlight_hitbox.disabled = !flashlight # Hitbox
 
 func _on_regen_timer_timeout():
 	regen = true
@@ -69,7 +98,11 @@ func _on_flashlight_area_body_exited(body):
 
 
 func _on_zap_area_body_entered(body):
+	print(body)	
 	if 'zapped' in body:
 		body.zapped()
 
 
+func _on_zap_charge_timer_timeout():
+	zap_charged = true
+	zap_charging = false	
